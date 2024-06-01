@@ -1,0 +1,15 @@
+{
+    "name": "Example",
+    "files": [
+        {
+            "fileName": "my_tests/tests.robot",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+    ]
+}
