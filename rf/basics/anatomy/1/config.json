@@ -1,6 +1,5 @@
 {
     "name": "Example",
-    "description": "readme.md",
     "files": [
         {
             "fileName": "file.robot",
@@ -12,6 +11,5 @@
     },
     "robotVersion": "7.0",
     "requirements": [
-      
     ]
 }
