@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     A minimal example to demonstrate the creation of result files. 
 
-
 *** Test Cases ***
 Test Number 1
     Log    Hello, world!
