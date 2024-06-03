@@ -15,7 +15,9 @@
         }
     ],
     "robotArgs": {
-        "loglevel": "TRACE:INFO"
+        "loglevel": "TRACE:INFO", 
+        "report": "NONE", 
+        "log": "log.html"
     },
     "robotVersion": "7.0",
     "requirements": [
