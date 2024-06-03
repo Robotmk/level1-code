@@ -2,7 +2,15 @@
     "name": "Example",
     "files": [
         {
-            "fileName": "tests.robot",
+            "fileName": "collections.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "strings.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "requests.robot",
             "hidden": false
         }
     ],
@@ -11,5 +19,6 @@
     },
     "robotVersion": "7.0",
     "requirements": [
+        "robotframework-requests"
     ]
 }

@@ -1,5 +1,6 @@
 *** Settings ***
 Library    Collections
+Documentation    This is a test suite which shows the usage of Collections library.
 
 *** Test Cases ***
 Example with Collections
