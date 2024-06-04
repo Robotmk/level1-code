@@ -6,4 +6,4 @@ A Test With A Dict Variable
     Login    &{USER}
 
 Extending A Dict Dynamically    
-    Login   name=robotmk    password=secret  role=admin
+    Login   &{USER}  role=admin
