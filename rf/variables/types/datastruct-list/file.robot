@@ -11,4 +11,4 @@ Display Libraries
     Log To Console    All libs: @{LIBRARIES}
 
 Access Nested List
-    Log  ${ROBOTFRAMEWORK}[0][2]
+    Log To Console  The Third Library is: ${ROBOTFRAMEWORK}[0][2]
