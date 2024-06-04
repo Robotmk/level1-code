@@ -2,6 +2,7 @@
 My First Test
     A Static Keyword
     A Keyword with Positional Arguments  Alice  12
+    A Keyword with Positional Arguments And Default Values
 
 *** Keywords ***
 A Static Keyword
