@@ -1,3 +1,7 @@
+*** Variables ***
+${SALUTATION}   Hello
+${NAME}         Robotmk
+
 *** Test Cases ***
 A Static Test
     Log To Console   Hello, Robotmk!

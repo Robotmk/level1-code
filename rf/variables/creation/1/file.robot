@@ -3,8 +3,6 @@ ${SALUTATION}   Hello
 ${NAME}         Robotmk
 ${GREET}        ${SALUTATION}, ${NAME}!
 
-@{MONTIORING_SYSTEMS}       Naemon  Checkmk
-@{MORE_MONTIORING_SYSTEMS}  Centreon  @{MONTIORING_SYSTEMS}  Nagios
 
 &{USER}    name=robotmk    password=secret
 
