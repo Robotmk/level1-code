@@ -1,6 +1,6 @@
 *** Test Cases ***
 A Static Test
-    Log    Hello, Robotmk!
+    Log To Console   Hello, Robotmk!
 
 A Test With Variables
-    Log    ${SALUTATION}, ${NAME}!    
+    Log To Console   ${SALUTATION}, ${NAME}!    
