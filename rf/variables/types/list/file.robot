@@ -4,8 +4,11 @@
 
 
 *** Test Cases ***
+A Static Test
+    Log Many   Naemon  Checkmk
+
 A Test With A List Variable
-    Log    @{MONTIORING_SYSTEMS}
+    Log Many    @{MONTIORING_SYSTEMS}
 
 Extending A List Dynamically
-    Log    @{MORE_MONTIORING_SYSTEMS} 
+    Log Many    @{MORE_MONTIORING_SYSTEMS} 
