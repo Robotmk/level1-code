@@ -1,9 +1,9 @@
 *** Test Cases ***
 A Static Test
-    Login    name=robotmk    password=secret
+    Log To Console    name=robotmk    password=secret
 
 A Test With A Dict Variable
-    Login    &{USER}
+    Log To Console    &{USER}
 
 Extending A Dict Dynamically    
-    Login   &{USER}  role=admin
+    Log To Console    &{USER}  role=admin
