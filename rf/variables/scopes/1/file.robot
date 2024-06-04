@@ -1,6 +1,6 @@
 *** Settings ***
-Documentation  Execute this Robot on the command line with the 
-...             following command: robot --variable CONTINENT:Europe
+Documentation  Execute this Robot on the command line with 
+...            robot --variable CONTINENT:Europe
 
 *** Test Cases ***
 Logging A Global Variable
