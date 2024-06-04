@@ -1,6 +1,6 @@
 *** Test Cases ***
 A Static Test
-    Log    Nagios  Naemon  Checkmk
+    Log    Hello, Robotmk!
 
 A Test With Variables
-    Log    @{MONTIORING_SYSTEMS}
+    Log    ${SALUTATION}, ${NAME}!    
