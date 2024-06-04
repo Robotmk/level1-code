@@ -4,7 +4,7 @@ ${NAME}         Robotmk
 ${GREET}        ${SALUTATION}, ${NAME}!
 
 
-&{USER}    name=robotmk    password=secret
+
 
 
 *** Test Cases ***
