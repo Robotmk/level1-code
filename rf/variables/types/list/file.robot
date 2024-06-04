@@ -1,7 +1,9 @@
 *** Test Cases ***
 A Static Test
-    Log    Nagios  Naemon  Checkmk
+    Log    Naemon  Checkmk
 
-A Test With Variables
+A Test With A List Variable
     Log    @{MONTIORING_SYSTEMS}
 
+Extending A List Dynamically
+    Log    Centreon  @{MONTIORING_SYSTEMS}  Nagios
