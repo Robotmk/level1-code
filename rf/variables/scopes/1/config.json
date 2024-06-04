@@ -10,7 +10,7 @@
     "robotArgs": {
         "loglevel": "TRACE:INFO", 
         "variable": [
-            "CONTINENT:VALUE1"
+            "CONTINENT:Europe"
         ]
     },
     "robotVersion": "7.0",
