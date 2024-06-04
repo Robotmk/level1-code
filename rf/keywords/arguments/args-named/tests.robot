@@ -1,13 +1,13 @@
 *** Test Cases ***
-My First Test
-    A Keyword with Default Arguments  Alice  12
-    A Keyword with Default Arguments  Alice
-    A Keyword with Default Arguments  12
-    A Keyword with Default Arguments  hour=12
-    A Keyword with Default Arguments  person=Bob  hour=9
+My Test
+    Order Item  Shirt  1  red  M
+    Order Item  Pants  51  size=S
+    Order Item  Shoes  14  color=black
+    # does not work 
+    #Order Item  color=black  Shoes  14  size=XL
 
 *** Keywords ***
 
-A Keyword with Default Arguments
-    [Arguments]    ${person}=Tim    ${hour}=10
-    Log To Console    Hello ${person}, it's ${hour} o clock!
+Order Item
+    [Arguments]   ${article}  ${quantity}  ${color}=blue  ${size}=XL
+    Log   Ordering now: ${quantity} ${color} ${size} ${article}
