@@ -1,0 +1,20 @@
+{
+    "name": "Example",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "file.robot",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO", 
+        "variable": [
+            "CONTINENT:Europe"
+        ]
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+      
+    ]
+}
