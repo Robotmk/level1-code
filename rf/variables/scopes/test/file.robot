@@ -3,10 +3,14 @@
 Test One
     VAR  ${CAR}  Ford  scope=test
     VAR  ${COLOR}  blue  scope=test
-    Choose Car
+    Choose First Car
+    Choose Second Car
 
 *** Keywords ***
-Choose Car
+Choose First Car
     VAR  ${CAR}  Volvo
-    Log  Choosing now a ${COLOR} ${CAR}
-    
+    Log  Choosing a ${COLOR} ${CAR}
+    VAR  ${COLOR}  red  scope=test
+
+Choose Second Car
+    Log  Choosing now a ${COLOR} ${CAR}!
