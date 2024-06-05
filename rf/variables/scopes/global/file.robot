@@ -8,4 +8,5 @@ ${COLOR}    blue
 
 *** Test Cases ***
 Test Car
+    VAR  ${CAR}  ALFA ROMEO  
     Log  Choosing a ${COLOR} ${CAR}!
