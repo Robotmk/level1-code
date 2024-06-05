@@ -1,11 +1,8 @@
 *** Variables ***
-
 ${CAR}      Ford
 ${COLOR}    blue  
 
-
 *** Test Cases ***
-
 Test First Car
     VAR  ${CAR}  Volvo
     Log  Choosing a ${COLOR} ${CAR}
