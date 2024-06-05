@@ -8,10 +8,7 @@
         }
     ],
     "robotArgs": {
-        "loglevel": "TRACE:INFO", 
-        "variable": [
-            "CONTINENT:Europe"
-        ]
+        "loglevel": "TRACE:INFO"
     },
     "robotVersion": "7.0",
     "requirements": [

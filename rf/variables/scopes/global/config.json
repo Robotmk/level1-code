@@ -8,7 +8,10 @@
         }
     ],
     "robotArgs": {
-        "loglevel": "TRACE:INFO"
+        "loglevel": "TRACE:INFO", 
+        "variable": [
+            "CAR:Volvo"
+        ]
     },
     "robotVersion": "7.0",
     "requirements": [
