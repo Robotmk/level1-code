@@ -3,12 +3,15 @@
     "description": "readme.md",
     "files": [
         {
-            "fileName": "tests.robot",
+            "fileName": "file.robot",
             "hidden": false
         }
     ],
     "robotArgs": {
-        "loglevel": "TRACE:INFO"
+        "loglevel": "TRACE:INFO", 
+        "variable": [
+            "CONTINENT:Europe"
+        ]
     },
     "robotVersion": "7.0",
     "requirements": [
