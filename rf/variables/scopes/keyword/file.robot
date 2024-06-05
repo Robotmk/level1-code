@@ -5,7 +5,7 @@ Create and Log User
 
 *** Keywords ***
 Generate User Details
-    ${username}=    Set Variable    robot_user
+    VAR  ${username}  robot_user
     ${password}=    Set Variable    securePass123
     Log A Local Variable  ${username}
     RETURN    ${username}    ${password}
