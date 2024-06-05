@@ -4,7 +4,7 @@ ${COLOR}    blue
 
 *** Test Cases ***
 Test First Car
-    VAR  ${CAR}  Volvo
+    VAR  ${CAR}  Volvo  scope=test
     Log  Choosing a ${COLOR} ${CAR}
     VAR  ${COLOR}  red  scope=suite
 
