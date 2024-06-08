@@ -6,4 +6,3 @@ dependencies:
   - pip=23.2.1  
   - pip:
     - robotframework==7
-    - robotframework-requests
