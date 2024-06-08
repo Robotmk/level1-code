@@ -1,0 +1,6 @@
+tasks:
+
+environmentConfigs:
+  - conda.yaml
+
+artifactsDir: output  
