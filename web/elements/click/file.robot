@@ -1,7 +1,6 @@
 *** Settings ***
 Library     Browser
 
-
 *** Test Cases ***
 Open Robocon24 Page
     New Browser    headless=False
