@@ -16,4 +16,4 @@ Type Delayed Search On Playwright
     New Page    url=https://playwright.dev
     Click  button.DocSearch-Button
     Type Text  input.DocSearch-Input  download  delay=400 ms
-    Keyboard Key  press  Enter
+    Press Keys  input.DocSearch-Input  Enter
