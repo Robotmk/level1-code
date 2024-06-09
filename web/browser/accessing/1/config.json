@@ -1,0 +1,21 @@
+{
+    "name": "Example",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "strict-kw.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "strict-import.robot",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+      
+    ]
+}
