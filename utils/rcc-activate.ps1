@@ -2,6 +2,12 @@
 # This script activates an environment in a specified space.
 # It retrieves the space name from the script's directory and checks for validity.
 
+# Check if RCC_ENVIRONMENT_HASH is set
+if ($env:RCC_ENVIRONMENT_HASH) {
+    Write-Host "Error: The current shell is already inside an activated environment."
+    exit 1
+}
+
 $scriptDir = Get-Location
 $spaceName = Split-Path -Leaf $scriptDir
 
@@ -31,3 +37,5 @@ if (-not (Test-Path "$scriptDir\conda.yaml")) {
 Write-Host "Activating environment in space: $spaceName"
 
 rcc task shell --space $spaceName
+
+Write-Host "🟢 Environment in space $spaceName activated."
