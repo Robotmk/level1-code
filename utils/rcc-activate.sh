@@ -2,7 +2,6 @@
 # This script activates an environment in a specified space.
 # It retrieves the space name from the script's directory and checks for validity.
 
-# ... existing code ...
 SPACENAME=$(basename "$(dirname "$0")")
 
 # Check if rcc command is available

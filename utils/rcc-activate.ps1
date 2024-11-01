@@ -2,7 +2,7 @@
 # This script activates an environment in a specified space.
 # It retrieves the space name from the script's directory and checks for validity.
 
-$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$scriptDir = Get-Location
 $spaceName = Split-Path -Leaf $scriptDir
 
 # Check if rcc command is available
