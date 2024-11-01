@@ -3,6 +3,23 @@ param (
     [string]$robotPath
 )
 
+# Function to display help information
+function Show-Help {
+    Write-Host "Author: Simon Meggle, mail@robotmk.org"
+    Write-Host "Usage: rcc-space.ps1 [-createOnly] [-robotPath <path>]"
+    Write-Host "Options:"
+    Write-Host "  -createOnly   Only create the environment without activating it."
+    Write-Host "  -robotPath    Specify the path to the robot directory."
+    Write-Host "This script activates an environment in a specified space."
+    Write-Host "Ensure that both robot.yaml and conda.yaml exist in the specified path."
+}
+
+# Call Show-Help if no parameters are provided
+if ($PSCmdlet.MyInvocation.BoundParameters.Count -eq 0) {
+    Show-Help
+    exit
+}
+
 # rcc-activate.ps1
 # This script activates an environment in a specified space.
 # It retrieves the space name from the script's directory and checks for validity.
@@ -13,13 +30,11 @@ if ($env:RCC_ENVIRONMENT_HASH) {
     exit 1
 }
 
-$scriptDir = Get-Location
-$spaceName = Split-Path -Leaf $scriptDir
-
-# Determine robotPath if not set
+# Determine spaceName based on robotPath or current directory
 if (-not $robotPath) {
     $robotPath = Get-Location
 }
+$spaceName = Split-Path -Leaf $robotPath  # Update to use robotPath if provided
 
 # Check for the existence of robot.yaml and conda.yaml in robotPath
 if (-not (Test-Path "$robotPath\robot.yaml") -or -not (Test-Path "$robotPath\conda.yaml")) {
@@ -43,9 +58,19 @@ Write-Host "Activating environment in space: $spaceName"
 
 # Update rcc command
 if ($createOnly) {
-    rcc ht vars --space $spaceName -y "$robotPath\robot.yaml"
+    rcc ht vars --space $spaceName -r "$robotPath\robot.yaml"
 } else {
-    rcc task shell --space $spaceName -y "$robotPath\robot.yaml"
+    rcc task shell --space $spaceName -r "$robotPath\robot.yaml"
 }
 
-Write-Host "OK: Environment in space $spaceName activated."
+
+if ($LASTEXITCODE -eq 0) {
+    if ($createOnly) {
+        Write-Host "OK: Environment in space $spaceName created."
+    } else {
+        Write-Host "OK: Environment in space $spaceName activated."
+    }
+} else {
+    Write-Host "❌ Error: Failed to activate environment in space $spaceName."
+    exit 1
+}
