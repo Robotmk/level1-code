@@ -1,3 +1,8 @@
+param (
+    [switch]$createOnly,
+    [string]$robotPath
+)
+
 # rcc-activate.ps1
 # This script activates an environment in a specified space.
 # It retrieves the space name from the script's directory and checks for validity.
@@ -10,12 +15,6 @@ if ($env:RCC_ENVIRONMENT_HASH) {
 
 $scriptDir = Get-Location
 $spaceName = Split-Path -Leaf $scriptDir
-
-# Parse command line options
-param (
-    [switch]$createOnly,
-    [string]$robotPath
-)
 
 # Determine robotPath if not set
 if (-not $robotPath) {
