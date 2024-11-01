@@ -28,4 +28,6 @@ if (-not (Test-Path "$scriptDir\conda.yaml")) {
     exit 1
 }
 
+Write-Host "Activating environment in space: $spaceName"
+
 rcc task shell --space $spaceName

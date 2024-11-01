@@ -27,4 +27,6 @@ if [ ! -f "$(dirname "$0")/conda.yaml" ]; then
     exit 1
 fi
 
+echo "Activating environment in space: $SPACENAME"
+
 rcc task shell --space "$SPACENAME"
