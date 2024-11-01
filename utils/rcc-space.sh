@@ -13,6 +13,8 @@ if ! command -v rcc &> /dev/null; then
 fi
 
 function display_help() {
+    echo "$0 [-c] [-d <path>] [-h]"
+    echo "Author: Simon Meggle, mail@robotmk.org"
     echo "Usage: rcc-space.sh [options]"
     echo
     echo "Options:"
