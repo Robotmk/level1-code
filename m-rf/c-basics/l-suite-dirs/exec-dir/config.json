@@ -2,7 +2,7 @@
     "name": "Example",
     "files": [
         {
-            "fileName": "my_tests/tests.robot",
+            "fileName": "my_tests",
             "hidden": false
         }
     ],
@@ -10,7 +10,6 @@
         "loglevel": "TRACE:INFO"
     },
     "robotVersion": "7.0",
-    "filesDropdownOpen": true,
     "requirements": [
     ]
 }
