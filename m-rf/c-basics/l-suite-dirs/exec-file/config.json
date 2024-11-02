@@ -10,6 +10,7 @@
         "loglevel": "TRACE:INFO"
     },
     "robotVersion": "7.0",
+    "filesDropdownOpen": true,
     "requirements": [
     ]
 }
