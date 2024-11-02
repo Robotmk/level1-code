@@ -2,11 +2,15 @@
     "name": "Example",
     "files": [
         {
-            "fileName": "tests1.robot",
+            "fileName": "tests1/tests1.robot",
             "hidden": false
         },
         {
-            "fileName": "tests2.robot",
+            "fileName": "tests1/tests2.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "tests2/tests3.robot",
             "hidden": false
         }
     ],
