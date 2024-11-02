@@ -3,7 +3,7 @@
     "description": "readme.md",
     "files": [
         {
-            "fileName": "file.robot",
+            "fileName": "state-example.robot",
             "hidden": false
         }
     ],
