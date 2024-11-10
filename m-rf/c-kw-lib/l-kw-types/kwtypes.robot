@@ -6,6 +6,7 @@ Documentation      This suite demonstrates the usage of library/user keywords in
 Test 1
     Keyword C
     Keyword D
+    Log  The test ends now.
 
 *** Keywords ***
 
