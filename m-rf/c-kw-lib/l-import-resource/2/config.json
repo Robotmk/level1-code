@@ -1,0 +1,25 @@
+{
+    "name": "Example",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "suite.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "keywords.resource",
+            "hidden": false
+        },
+        {
+            "fileName": "variables.resource",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+      
+    ]
+}

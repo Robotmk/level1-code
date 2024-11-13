@@ -4,7 +4,6 @@ Resource  res_A.resource
 
 *** Variables ***
 ${SUITE_VAR}  Hello, Suite!
-${VAR_B}  Hello, res_BBBB!
 
 *** Test Cases ***
 Test 1
