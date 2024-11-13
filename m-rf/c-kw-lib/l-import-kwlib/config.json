@@ -21,5 +21,7 @@
     "robotVersion": "7.0",
     "requirements": [
       
-    ]
+    ], 
+    "projectDropdownOpen": false, 
+    "filesDropdownOpen": false
 }
