@@ -1,0 +1,26 @@
+{
+    "name": "Example",
+    "files": [
+        {
+            "fileName": "collections.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "strings.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "requests.robot",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO", 
+        "report": "NONE", 
+        "log": "logFOO.html"
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+        "robotframework-requests"
+    ]
+}
