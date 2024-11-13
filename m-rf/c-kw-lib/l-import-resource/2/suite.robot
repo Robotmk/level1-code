@@ -1,5 +1,4 @@
 *** Settings ***
-
 Library    BuiltIn
 Library    String
 
@@ -7,7 +6,6 @@ Library    String
 ${GREETING}      Hello, Robot Framework!
 ${USERNAME}      test_user
 ${PASSWORD}      secret_password
-
 
 *** Test Cases ***
 Test 1 - Login Process
