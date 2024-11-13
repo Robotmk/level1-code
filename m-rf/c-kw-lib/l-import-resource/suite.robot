@@ -4,6 +4,7 @@ Resource  res_A.resource
 
 *** Variables ***
 ${SUITE_VAR}  Hello, Suite!
+${VAR_B}  Hello, res_BBBB!
 
 *** Test Cases ***
 Test 1
@@ -11,4 +12,4 @@ Test 1
     Keyword B
 
 Test 2
-    Log  VAR_B: ${VAR_B}
+    Log To Console  VAR_B: ${VAR_B}
