@@ -8,4 +8,5 @@ ${VAR_B}  Hello, res_B!
 
 Keyword B
     Log  "A keyword from res_B.resource"
-    Log  ${SUITE_VAR}
+    Log  SUITE_VAR: ${SUITE_VAR}
+    Log  VAR_A: ${VAR_A}
