@@ -5,15 +5,15 @@
         {
             "fileName": "suite-allinone.robot",
             "hidden": false
-        }.
+        },
         {
             "fileName": "suite-with-res.robot",
             "hidden": false
-        }.
+        },
         {
             "fileName": "my-res.sreosurce",
             "hidden": false
-        }.
+        }
     ],
     "robotArgs": {
         "loglevel": "TRACE:INFO"
