@@ -3,15 +3,15 @@
     "description": "readme.md",
     "files": [
         {
-            "fileName": "suite-allinone.robot",
+            "fileName": "suite.robot",
             "hidden": false
         },
         {
-            "fileName": "suite-with-res.robot",
+            "fileName": "res_A.resource",
             "hidden": false
         },
         {
-            "fileName": "my-res.resource",
+            "fileName": "res_B.resource",
             "hidden": false
         }
     ],
@@ -21,7 +21,5 @@
     "robotVersion": "7.0",
     "requirements": [
       
-    ], 
-    "projectDropdownOpen": false, 
-    "filesDropdownOpen": false
+    ]
 }
