@@ -1,0 +1,25 @@
+{
+    "name": "Example",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "suite-allinone.robot",
+            "hidden": false
+        }.
+        {
+            "fileName": "suite-with-res.robot",
+            "hidden": false
+        }.
+        {
+            "fileName": "my-res.sreosurce",
+            "hidden": false
+        }.
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+      
+    ]
+}
