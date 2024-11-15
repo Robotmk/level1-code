@@ -12,12 +12,16 @@
         {
             "fileName": "requests.robot",
             "hidden": false
+        },
+        {
+            "fileName": "customlib.robot",
+            "hidden": false
         }
     ],
     "robotArgs": {
         "loglevel": "TRACE:INFO", 
         "report": "NONE", 
-        "log": "logFOO.html"
+        "log": "log.html"
     },
     "robotVersion": "7.0",
     "requirements": [
