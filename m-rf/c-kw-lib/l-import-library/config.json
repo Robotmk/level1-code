@@ -1,5 +1,6 @@
 {
     "name": "Example",
+    "description": "readme.md",
     "files": [
         {
             "fileName": "collections.robot",
@@ -19,9 +20,7 @@
         }
     ],
     "robotArgs": {
-        "loglevel": "TRACE:INFO", 
-        "report": "NONE", 
-        "log": "log.html"
+        "loglevel": "TRACE:INFO"
     },
     "robotVersion": "7.0",
     "requirements": [
