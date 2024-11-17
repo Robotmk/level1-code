@@ -1,12 +1,13 @@
 *** Variables ***
-&{USER}    name=robotmk    password=secret
+&{USER_DATA}         name=robotmk    password=secret
+&{MORE_USER_DATA}    role=admin  &{USER_DATA}  status=active
 
 *** Test Cases ***
 A Static Test
     Log Many    name=robotmk    password=secret
 
 A Test With A Dict Variable
-    Log Many    &{USER}
+    Log Many    &{USER_DATA}
 
-Extending A Dict Dynamically    
-    Log Many    &{USER}  role=admin
+A Test With An Extended Dict
+    Log Many    &{MORE_USER_DATA}

@@ -10,5 +10,5 @@ A Static Test
 A Test With A List Variable
     Log Many    @{MONTIORING_SYSTEMS}
 
-Extending A List Dynamically
+A Test With An Extended List
     Log Many    @{MORE_MONTIORING_SYSTEMS} 
