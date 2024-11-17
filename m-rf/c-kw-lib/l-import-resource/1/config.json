@@ -13,6 +13,10 @@
         {
             "fileName": "res_B.resource",
             "hidden": false
+        },
+        {
+            "fileName": "res_C.resource",
+            "hidden": false
         }
     ],
     "robotArgs": {

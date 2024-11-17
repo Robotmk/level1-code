@@ -2,7 +2,7 @@
 Library  String
 
 *** Variables ***
-${VAR_B}  Hello, res_B!
+${VAR_B}  Hello from res_B!
 
 *** Keywords ***
 
