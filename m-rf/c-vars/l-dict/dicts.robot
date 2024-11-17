@@ -3,11 +3,23 @@
 &{MORE_USER_DATA}    role=admin  &{USER_DATA}  status=active
 
 *** Test Cases ***
-A Static Test
-    Log Many    name=robotmk    password=secret
-
-A Test With A Dict Variable
+Logging The Dicts
     Log Many    &{USER_DATA}
-
-A Test With An Extended Dict
+    Log  All User Data: &{USER_DATA}
     Log Many    &{MORE_USER_DATA}
+
+Logging Dict Items
+    Log    The name is: ${USER_DATA}[name]
+    Log    The password is: ${USER_DATA}[password]
+    Log    The role is: ${MORE_USER_DATA}[role]
+    Log    The status is: ${MORE_USER_DATA}[status]
+    Log    The name is: ${MORE_USER_DATA}[name]
+    Log    The password is: ${MORE_USER_DATA}[password]
+
+Logging Dict Items - Dot Notation
+    Log    The name is: ${USER_DATA.name}
+    Log    The password is: ${USER_DATA.password}
+    Log    The role is: ${MORE_USER_DATA.role}
+    Log    The status is: ${MORE_USER_DATA.status}
+    Log    The name is: ${MORE_USER_DATA.name}
+    Log    The password is: ${MORE_USER_DATA.password}

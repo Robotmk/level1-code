@@ -1,14 +1,15 @@
 *** Variables ***
-@{MONTIORING_SYSTEMS}       Naemon  Checkmk
-@{MORE_MONTIORING_SYSTEMS}  Centreon  @{MONTIORING_SYSTEMS}  Nagios
-
+@{LIBRARIES}    Selenium   Appium   Playwright
+@{MORE_LIBRARIES}  DataDriver  @{LIBRARIES}  Requests
 
 *** Test Cases ***
-A Static Test
-    Log Many   Naemon  Checkmk
+Logging The Lists
+    Log Many    @{LIBRARIES}
+    Log    All libs: @{LIBRARIES}
+    Log Many    @{MORE_LIBRARIES} 
 
-A Test With A List Variable
-    Log Many    @{MONTIORING_SYSTEMS}
-
-A Test With An Extended List
-    Log Many    @{MORE_MONTIORING_SYSTEMS} 
+Logging List Items
+    Log    The first library is: ${LIBRARIES}[0]
+    Log    The second library is: ${LIBRARIES}[1]
+    Log    The third library is: ${LIBRARIES}[2]
+    Log    Last library: ${LIBRARIES}[-1]
