@@ -13,4 +13,4 @@ ${ANSWER}            The answer is ${INTEGER}    # This will be 'The answer is 4
 
 *** Test Cases ***
 Test 1
-    No Operation
+    Log To Console   ${STRING}
