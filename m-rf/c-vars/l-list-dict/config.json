@@ -3,7 +3,7 @@
     "description": "readme.md",
     "files": [
         {
-            "fileName": "lists.robot",
+            "fileName": "lists-dict.robot",
             "hidden": false
         }
     ],
