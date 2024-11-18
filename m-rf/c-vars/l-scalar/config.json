@@ -3,7 +3,7 @@
     "description": "readme.md",
     "files": [
         {
-            "fileName": "dicts.robot",
+            "fileName": "scalar.robot",
             "hidden": false
         }
     ],
