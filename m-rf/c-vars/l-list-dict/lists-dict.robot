@@ -1,11 +1,8 @@
 *** Variables ***
 @{LIBRARIES}    Selenium   Appium   Playwright
 @{MORE_LIBRARIES}  DataDriver  @{LIBRARIES}  Requests
-
 &{USER_DATA}         name=robotmk    password=secret
 &{MORE_USER_DATA}    role=admin  &{USER_DATA}  status=active
-
-${STATUS_KEY}    status
 
 *** Test Cases ***
 Logging The Lists
@@ -18,7 +15,6 @@ Logging List Items
     Log    The second library is: ${LIBRARIES}[1]
     Log    The third library is: ${LIBRARIES}[2]
     Log    Last library: ${LIBRARIES}[-1]
-
 
 Logging The Dicts
     Log Many    &{USER_DATA}
