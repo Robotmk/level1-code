@@ -13,7 +13,7 @@ Returning A List
 
 Returning a Dict Example
     ${vars}=    Get Environment Variables
-    Log    Python found in: ${vars}[PYTHON_EXE]
+    Log    TMP dir: ${vars}[TMP]
 
 Multiple Return Example
     ${path}    ${file} =    Split Path    server/logs/server.log
