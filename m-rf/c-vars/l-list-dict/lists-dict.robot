@@ -28,11 +28,3 @@ Logging Dict Items
     Log    The password is: ${MORE_USER_DATA}[password]
     Log    The role is: ${MORE_USER_DATA}[role]
     Log    The status is: ${MORE_USER_DATA}[status]
-
-Logging Dict Items - Dot Notation
-    Log    The name is: ${USER_DATA.name}
-    Log    The password is: ${USER_DATA.password}
-    Log    The name is: ${MORE_USER_DATA.name}
-    Log    The password is: ${MORE_USER_DATA.password}    
-    Log    The role is: ${MORE_USER_DATA.role}
-    Log    The status is: ${MORE_USER_DATA.status}
