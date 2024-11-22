@@ -5,15 +5,15 @@ Library    OperatingSystem
 *** Test Cases ***
 Returning A Scalar
     ${length} =    Get Length    Sapien risus aliquet torquent, vivamus feugiat curae est.
-    # Check whether the length of the string is 57
+    Should Be Equal    ${length}    57
 
 Returning A List
     ${files} =  List Directory    ${CURDIR}
-    # Check whether "returnvalue.robot" is in the files list
+    Should Contain    ${files}   returnvalue.robot
 
 Returning a Dict Example
     ${vars}=    Get Environment Variables
-    # Write the value of the PATH environment variable to the log
+    Log    PATH is: ${vars}[PATH]
 
 Multiple Return Example
     ${path}    ${file} =    Split Path    server/logs/server.log
