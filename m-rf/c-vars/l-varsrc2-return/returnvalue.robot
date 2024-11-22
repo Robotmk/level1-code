@@ -2,9 +2,11 @@
 Documentation    This suite demonstrates how to return values from a keyword
 Library    OperatingSystem
 
+*** Variables ***
+${SENTENCE}    Sapien risus aliquet torquent, vivamus feugiat curae est.
 *** Test Cases ***
 Returning A Scalar
-    ${length} =    Get Length    Sapien risus aliquet torquent, vivamus feugiat curae est.
+    ${length} =    Get Length    ${SENTENCE}
     Should Be Equal    ${length}    57
 
 Returning A List
