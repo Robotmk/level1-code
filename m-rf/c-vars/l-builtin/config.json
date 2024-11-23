@@ -1,6 +1,5 @@
 {
     "name": "Example",
-    "description": "readme.md",
     "files": [
         {
             "fileName": "builtin.robot",
