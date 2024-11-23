@@ -5,6 +5,10 @@
         {
             "fileName": "builtin.robot",
             "hidden": false
+        },
+        {
+            "fileName": "res/My-Res.resource",
+            "hidden": false
         }
     ],
     "robotArgs": {
