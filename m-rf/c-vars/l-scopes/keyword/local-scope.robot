@@ -4,7 +4,7 @@ Documentation    This suite demonstrates the use of local variables.
 *** Test Cases ***
 Create and Log User
     ${userdata}=    Generate User Details
-    Log A Local Variable  @{userdata}
+    Log A Local Variable  ${userdata}
 
 *** Keywords ***
 Generate User Details
@@ -13,6 +13,6 @@ Generate User Details
     RETURN    ${username}    ${password}
 
 Log A Local Variable
-    [Arguments]    @{data} 
+    [Arguments]    ${data} 
     Log          User data are:
     Log Many     @{data}

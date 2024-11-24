@@ -1,3 +1,5 @@
+*** Settings ***
+Documentation    This suite demonstrates the use of test and local variables.
 *** Test Cases ***
 
 Test One
