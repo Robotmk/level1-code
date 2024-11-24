@@ -3,16 +3,16 @@ Documentation    This suite demonstrates the use of local variables.
 
 *** Test Cases ***
 Create and Log User
-    ${userdata}=    Generate User Details
-    Log A Local Variable  ${userdata}
+    ${car}=    Get The Car
+    Log The Car  ${car}
 
 *** Keywords ***
-Generate User Details
-    VAR  ${username}  robot_user
-    VAR  ${password}  securePass123
-    RETURN    ${username}    ${password}
+Get The Car
+    VAR  ${brand}     BMW
+    VAR  ${color}     blue
+    RETURN    ${brand}  ${color}
 
-Log A Local Variable
-    [Arguments]    ${data} 
-    Log          User data are:
-    Log Many     @{data}
+Log The Car
+    [Arguments]    ${car} 
+    Log          The car is a ${car}[1] ${car}[0].
+    Log Many     List contains:  @{car}
