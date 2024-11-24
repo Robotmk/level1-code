@@ -1,3 +1,6 @@
+*** Settings ***
+Documentation    This suite demonstrates the use of suite and test variables.
+
 *** Variables ***
 ${CAR}      Ford
 ${COLOR}    blue  
