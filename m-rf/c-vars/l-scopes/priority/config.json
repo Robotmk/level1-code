@@ -1,0 +1,24 @@
+{
+    "name": "Example",
+    "files": [
+        {
+            "fileName": "scopes.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "My-Res-1.resource",
+            "hidden": false
+        },
+        {
+            "fileName": "My-Res-2.resource",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+      
+    ]
+}
