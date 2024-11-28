@@ -10,6 +10,6 @@ Test One
 *** Keywords ***
 Get Line As User Keyword
     [Arguments]  ${string}  ${line_number}   # <--- 
-    ${lines}=  Split String  ${string}  \n
-    ${line}=  Get From List  ${lines}  ${line_number}
+    ${line}=  Get Line  ${string}  ${line_number}
+    
     RETURN  ${line}

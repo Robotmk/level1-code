@@ -20,6 +20,11 @@ List Access
 Dict Access
     Login  &{D_USER}
 
+# BONUS 💫
+Dicts And Lists in String Context
+    Log    Fruit list in String Context as \@: @{L_FRUITS}, as \$: ${L_FRUITS}
+    Log    User dict in String Context, as \&: &{D_USER}, as \@: @{D_USER}, as \$: ${D_USER}
+
 *** Keywords ***
 Login
     [Arguments]    ${name}    ${password}

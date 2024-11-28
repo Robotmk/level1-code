@@ -2,7 +2,7 @@
     "name": "Example",
     "files": [
         {
-            "fileName": "positional-args.robot",
+            "fileName": "variable-pos-args.robot",
             "hidden": false
         }
     ],
