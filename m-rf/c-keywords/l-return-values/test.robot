@@ -1,17 +1,22 @@
 *** Settings ***
 Documentation  Demonstrate the usage of the RETURN statement.
 
+*** Variables ***
+${EXPECTED_RESULT}  14
+
 *** Test Cases ***
 My Test
-    ${numbers}=  Return Three Values
-    ${result} =  Sum Of  @{numbers}
-    Should Be Equal  ${result}  ${14}
+    No Operation
+    # Get the values from "Return Three Values"
+    # Calculate the sum of the values with "Sum Of"
+    # Use "Should Be Equal" to compare the result with the expected value
+
 *** Keywords ***
 
 Sum Of
     [Arguments]  ${a}  ${b}  ${c}
     ${sum}=  Evaluate  ${a} + ${b} + ${c}
-    RETURN  ${sum}
+    # Return the result
 
 Return Three Values
-    RETURN    2    4    8
+    No Operation
