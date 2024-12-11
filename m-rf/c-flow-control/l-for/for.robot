@@ -16,7 +16,7 @@ Example FOR single fruits
 
 Example FOR fruit basket
     Log    Logging fruits from a basket...
-    FOR    ${fruit}    IN    @{fruit_basket}
+    FOR    ${fruit}    IN    ${fruit_basket}
         Log    ${fruit}
     END
     Log    That's all from the basket!

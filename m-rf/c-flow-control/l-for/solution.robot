@@ -9,7 +9,7 @@ ${fruit2}          orange
 *** Test Cases ***
 Example FOR single fruits
     Log    Logging three fruits...
-    FOR    ${fruit}    IN    apple  banana  cherry
+    FOR    ${fruit}    IN    ${fruit_basket}[0]    ${fruit_basket}[1]    ${fruit_basket}[2]
         Log    ${fruit}
     END
     Log    That's all folks!
@@ -23,7 +23,7 @@ Example FOR fruit basket
 
 Example FOR fruit basket with variable
     Log    Logging fruits from a basket with bonus fruits...
-    FOR    ${fruit}    IN    ${fruit_basket}    ${fruit1}    ${fruit2}
+    FOR    ${fruit}    IN    @{fruit_basket}    ${fruit1}    ${fruit2}
         Log To Console    ${fruit}
     END
     Log    That was a lot!
