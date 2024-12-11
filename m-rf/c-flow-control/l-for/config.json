@@ -4,6 +4,10 @@
         {
             "fileName": "for.robot",
             "hidden": false
+        },
+        {
+            "fileName": "solution.robot",
+            "hidden": false
         }
     ],
     "robotArgs": {
