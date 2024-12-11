@@ -3,6 +3,8 @@ Documentation     Demonstrate the usage of the basic FOR loop.
 
 *** Variables ***
 @{fruit_basket}    apple  banana  cherry
+${fruit1}          strawberry
+${fruit2}          orange
 
 *** Test Cases ***
 Example FOR single fruits
@@ -18,3 +20,10 @@ Example FOR fruit basket
         Log    ${fruit}
     END
     Log    That's all from the basket!
+
+Example FOR fruit basket with variable
+    Log    Logging fruits from a basket with bonus fruits...
+    FOR    ${fruit}    IN    @{fruit_basket}    ${fruit1}    ${fruit2}
+        Log    ${fruit}
+    END
+    Log    That was a lot!
