@@ -4,6 +4,10 @@
         {
             "fileName": "break-continue.robot",
             "hidden": false
+        },
+        {
+            "fileName": "solution.robot",
+            "hidden": false
         }
     ],
     "robotArgs": {

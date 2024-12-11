@@ -11,7 +11,7 @@ Find Target Value with BREAK
         Log    Checking number: ${num}
         IF    ${num} == ${target}
             Log    Target number found: ${num}
-            No Operation
+            BREAK
         END
     END
     Log    Search completed
@@ -21,6 +21,6 @@ Skip Negative Numbers with CONTINUE
     VAR   @{positive_numbers}
     FOR    ${num}    IN    @{numbers}
         Log    Checking number: ${num}
-        IF  ${num} <= 0   No Operation   ELSE  Append To List   ${positive_numbers}   ${num}
+        IF  ${num} <= 0   CONTINUE  ELSE  Append To List   ${positive_numbers}   ${num}
     END
     Log   Positive numbers: @{positive_numbers}
