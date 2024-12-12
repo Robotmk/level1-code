@@ -4,10 +4,6 @@
         {
             "fileName": "skip.robot",
             "hidden": false
-        },
-        {
-            "fileName": "solution.robot",
-            "hidden": false
         }
     ],
     "robotArgs": {
