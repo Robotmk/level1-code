@@ -5,6 +5,10 @@
         {
             "fileName": "syntax.robot",
             "hidden": false
+        },
+        {
+            "fileName": "solution.robot",
+            "hidden": false
         }
     ],
     "robotArgs": {
