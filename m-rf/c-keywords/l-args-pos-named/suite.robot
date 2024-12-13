@@ -1,8 +1,11 @@
 *** Test Cases ***
-Create User with Default role
+Test A
     No Operation
 
-Create User with Custom Role
+Test B
+    No Operation
+
+Test B
     No Operation
 
 *** Keywords ***
