@@ -2,7 +2,7 @@
     "name": "Example",
     "files": [
         {
-            "fileName": "positional-args.robot",
+            "fileName": "suite.robot",
             "hidden": false
         },
         {
