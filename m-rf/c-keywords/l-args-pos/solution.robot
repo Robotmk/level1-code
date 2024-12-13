@@ -1,9 +1,9 @@
 *** Test Cases ***
 Create User with Default role
-    No Operation
+    Create User    Bob  secret121!
 
 Create User with Custom Role
-    No Operation
+    Create User    Bob  secret121!  admin
 
 *** Keywords ***
 

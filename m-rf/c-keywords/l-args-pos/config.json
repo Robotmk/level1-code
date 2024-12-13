@@ -4,6 +4,10 @@
         {
             "fileName": "positional-args.robot",
             "hidden": false
+        },
+        {
+            "fileName": "solution.robot",
+            "hidden": false
         }
     ],
     "robotArgs": {
