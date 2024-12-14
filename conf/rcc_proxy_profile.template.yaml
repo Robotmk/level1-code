@@ -1,0 +1,13 @@
+name: Proxy
+description: RCC proxy profile
+settings:
+  certificates:
+    verify-ssl: true
+  network:
+    no-proxy: 'localhost,127.0.0.1'
+    https-proxy: 'http://myproxy.local:3128'
+    http-proxy: 'http://myproxy.local:3128'
+  meta:
+    name: Proxy
+    description: RCC proxy profile
+    source: Robotmk
