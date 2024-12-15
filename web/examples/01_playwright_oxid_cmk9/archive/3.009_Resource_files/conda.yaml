@@ -1,0 +1,17 @@
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.9.13               # https://pyreadiness.org/3.9/ 
+  - pip=22.1.2                  # https://pip.pypa.io/en/stable/news/
+  - pip:
+    - robotframework>=6
+    - robotframework-crypto==0.3.0
+    - robotframework-browser>=14.3.0
+    - robotframework-imagehorizonlibrary==1.0
+    - opencv-python
+    - mergedeep
+    - python-dateutil
+
+rccPostInstall:
+  - rfbrowser init                    # Initialize Playwright

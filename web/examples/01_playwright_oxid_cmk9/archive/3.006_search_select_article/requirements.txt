@@ -1,0 +1,6 @@
+robotframework>=6
+robotframework-crypto==0.3.0
+robotframework-browser>=14.3.0
+robotframework-imagehorizonlibrary==1.0
+#robotframework-screencaplibrary==1.6.0
+opencv-python

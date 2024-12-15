@@ -1,0 +1,4 @@
+robotframework>=6
+robotframework-crypto==0.3.0
+robotframework-imagehorizonlibrary==1.0
+opencv-python
