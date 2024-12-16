@@ -19,8 +19,8 @@
             "hidden": false
         },
         {
-            "fileName": "CustomLib.py",
-            "hidden": true
+            "fileName": "CustomLibrary.py",
+            "hidden": false
         }
     ],
     "robotArgs": {
