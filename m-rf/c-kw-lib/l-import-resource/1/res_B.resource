@@ -1,3 +1,3 @@
 *** Variables ***
-${VAR_A}  res_B
+${VAR_B}  res_B
 
