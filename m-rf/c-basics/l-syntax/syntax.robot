@@ -12,5 +12,4 @@ Test 2
     Log    Log 1 leading and 5 trailing spaces. 
     Log    Log the name of the variable: ${STRING}
     Log    Log this path: C:\better\use\forward\slashes
-    Log    Write a comment behind this line. 
-    Log    Write a multiline comment behind this line.
+    Log    Write a comment behind this line.

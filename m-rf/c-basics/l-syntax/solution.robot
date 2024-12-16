@@ -25,5 +25,3 @@ Test 2
     Log    Log the name of the variable: \${STRING}
     Log    Log this path: C:\\better\\use\\forward\\slashes
     Log    Write a comment behind this line.    # This is a comment.
-    Log    Write a multiline comment behind this line.   # This comment is 
-    # continued on the next line.

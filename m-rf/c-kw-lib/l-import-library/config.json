@@ -17,6 +17,10 @@
         {
             "fileName": "customlib.robot",
             "hidden": false
+        },
+        {
+            "fileName": "CustomLib.py",
+            "hidden": true
         }
     ],
     "robotArgs": {
