@@ -5,7 +5,7 @@ Library    Collections
 @{numbers}    -3    5    -1    7    0    -8    9
 
 *** Test Cases ***
-Find Target Value with BREAK
+Find Target Value
     VAR  ${target}   7
     FOR    ${num}    IN    @{numbers}
         Log    Checking number: ${num}
@@ -16,7 +16,7 @@ Find Target Value with BREAK
     END
     Log    Search completed
 
-Skip Negative Numbers with CONTINUE
+Skip Negative Numbers
     Log    Only processing positive numbers...
     VAR   @{positive_numbers}
     FOR    ${num}    IN    @{numbers}

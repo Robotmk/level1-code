@@ -2,12 +2,13 @@
 Library    Collections
 
 *** Variables ***   
-@{numbers}    -3    5    -1    7    0    -8    9
+@{NUMBERS}    -3    5    -1    7    0    -8    9
 
 *** Test Cases ***
-Find Target Value with BREAK
+Find Target Value
+    [Documentation]  This test case finds the target number from the list.
     VAR  ${target}   7
-    FOR    ${num}    IN    @{numbers}
+    FOR    ${num}    IN    @{NUMBERS}
         Log    Checking number: ${num}
         IF    ${num} == ${target}
             Log    Target number found: ${num}
@@ -16,10 +17,10 @@ Find Target Value with BREAK
     END
     Log    Search completed
 
-Skip Negative Numbers with CONTINUE
-    Log    Only processing positive numbers...
+Skip Negative Numbers
+    [Documentation]  This test case returns only positive numbers form the list.ssing positive numbers...
     VAR   @{positive_numbers}
-    FOR    ${num}    IN    @{numbers}
+    FOR    ${num}    IN    @{NUMBERS}
         Log    Checking number: ${num}
         IF  ${num} <= 0   CONTINUE  ELSE  Append To List   ${positive_numbers}   ${num}
     END
