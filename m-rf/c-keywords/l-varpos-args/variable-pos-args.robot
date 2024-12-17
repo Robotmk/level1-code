@@ -1,10 +1,11 @@
 *** Test Cases ***
 Combined Example
-    Run Custom Command    cmd1
-    Run Custom Command    cmd1    user=bob    timeout=3s
-    Run Custom Command    cmd1    cmd2    cmd3    user=alice    timeout=60s
+    [Documentation]  command type, "n" commands, user, timeout
+    Run Custom Command    maintenance  cmd1
+    Run Custom Command    custom    cmd1    user=bob    timeout=3s
+    Run Custom Command    custom    cmd1    cmd2    cmd3    user=alice    timeout=60s
 
 *** Keywords ***
 Run Custom Command
-    [Arguments]    @{commands}    ${user}=admin    ${timeout}=30s
+    #[Arguments]    ?
     Log    Running commands: ... 
