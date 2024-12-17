@@ -8,5 +8,7 @@ Combined Example
 *** Keywords ***
 Run Custom Command
     [Arguments]    ${type}    @{commands}    ${user}=admin    ${timeout}=30s
+    # @{commands} and ${commands} are both possible; using an expanded list (@) in a 
+    # string context is not possible
     Log    Running ${type} commands: @{commands} with user ${user} and timeout ${timeout}!
     Log    Running ${type} commands: ${commands} with user ${user} and timeout ${timeout}!

@@ -1,5 +1,5 @@
 *** Settings ***
-Library    MyLib.py     
+Library    String    
 Documentation    This is a test suite for the String library.
 
 *** Variables ***
