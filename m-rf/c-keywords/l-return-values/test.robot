@@ -19,5 +19,5 @@ Sum Of
     # -> Return the result
 
 Return Three Values
-    # -> Return values 1,2 and 3
+    # -> Return values 2,4 and 8
     No Operation
