@@ -9,7 +9,7 @@ My Test
     No Operation
     # -> Get the values from "Return Three Values"
     # -> Calculate the sum of the values with "Sum Of"
-    # -> Use "Should Be Equal" to compare the result with the expected value
+    # -> Use "Should Be Equal" to compare the result with ${EXPECTED_RESULT}
 
 *** Keywords ***
 
