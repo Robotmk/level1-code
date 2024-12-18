@@ -31,5 +31,5 @@ Test6
     Set Tags    example    another
 
 Test7
-    [Tags]    target:${ENVIRONMENT}    -s*    crm
+    [Tags]    target:${ENVIRONMENT}    -s*    -crm
     No Operation

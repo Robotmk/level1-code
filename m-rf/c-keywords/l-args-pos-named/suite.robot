@@ -5,7 +5,7 @@ Test A
 Test B
     No Operation
 
-Test B
+Test C
     No Operation
 
 *** Keywords ***

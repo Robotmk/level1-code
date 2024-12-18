@@ -1,32 +1,24 @@
+*** Variables ***
+${GERMAN_LEGAL_AGE}  18
+${GOUDA_YOUNG_WEEKS}  4
+${GOUDA_MEDIUM_AGED_WEEKS}  18
+${GOUDA_OLD_WEEKS}  52
+
 *** Test Cases ***
-Expl IF Statement
-    VAR  ${value}  10
-    IF    ${value} > 5
-        Log    Value is greater than 5
-    END
+IF-Tests
+    # Ex.: User is not of legal age!
+    Check Legal Age    17
+    Check Legal Age    21
 
-Expl IF ELSE Statement
-    VAR  ${value}  10
-    IF    ${value} < 5
-        Log    Value is greater than 5
-    ELSE
-        Log    Value is less than 5
-    END
+    # Ex.: Gouda is medium aged
+    Determine Gouda Type    3
+    Determine Gouda Type    15
+    Determine Gouda Type    41
+    Determine Gouda Type    120
 
-Expl IF ELSE IF ELSE Statement
-    VAR  ${value}  5
-    IF    ${value} > 5
-        Log    Value is greater than 5
-    ELSE IF    ${value} == 5
-        Log    Value is equal to 5
-    ELSE
-        Log    Value is less than 5
-    END
+*** Keywords ***
+Check Legal Age
+    No Operation
 
-Expl Inline IF Statement
-    VAR  ${value}  15
-    IF    ${value} > 5    Log    Value is greater than 5
-
-Expl Var Assignments with Inline IF Statements
-    ${var} =    IF    $condition    Keyword    argument    ELSE    Another Keyword
-    ${user}    ${password} =    IF    $production    Get Production Auth    ELSE    Get Testing Auth
+Determine Gouda Type
+    No Operation
