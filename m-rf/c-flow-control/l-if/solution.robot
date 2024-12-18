@@ -12,10 +12,11 @@ IF-Tests
     Determine Gouda Type    15
     Determine Gouda Type    41
     Determine Gouda Type    120
-    
+
 *** Keywords ***
 
 Check Legal Age
+    [Documentation]  Writes to the log file whether the user is of legal age.
     [Arguments]    ${age}
     IF    ${age} < ${GERMAN_LEGAL_AGE}
         Log    User is not of legal age!
@@ -24,6 +25,7 @@ Check Legal Age
     END
 
 Determine Gouda Type
+    [Documentation]  Writes to the log file the type of Gouda based on the age in weeks.
     [Arguments]    ${age}
     IF    ${age} < ${GOUDA_YOUNG_WEEKS}
         Log    Gouda is young

@@ -18,7 +18,9 @@ IF-Tests
 
 *** Keywords ***
 Check Legal Age
+    [Documentation]  Writes to the log file whether the user is of legal age.
     No Operation
 
 Determine Gouda Type
+    [Documentation]  Writes to the log file the type of Gouda based on the age in weeks.
     No Operation
