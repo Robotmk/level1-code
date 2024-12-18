@@ -1,37 +1,44 @@
 *** Settings ***
-Test Tags       requirement: 42    smoke
+Documentation   Execute with: 
+...   robot --settag crm --settag sprint:33 assign-tags.robot
+Test Tags       sprint:42    smoke
 
 *** Variables ***
 ${HOST}         10.0.1.42
 ${ENVIRONMENT}   TEST
 
 *** Test Cases ***
-No own tags
-    [Documentation]    Test has tags 'requirement: 42' and 'smoke'.
+Test 1
+    # crm, smoke, sprint:33, sprint:42
     No Operation
 
-Own tags
-    [Documentation]    Test has tags 'requirement: 42', 'smoke' and 'not ready'.
+Test 2
+    # crm, smoke, sprint:33, sprint:42, not ready
     [Tags]    not ready
     No Operation
 
-Own tags with variable
-    [Documentation]    Test has tags 'requirement: 42', 'smoke',
-    ...    'host: 10.0.1.42' and 'env: TEST'.
-    [Tags]    host: ${HOST}    env: ${ENVIRONMENT}
+Test 3
+    # (A global tag cannot be removed!)
+    # crm, host:10.0.1.42, smoke, sprint:33, sprint:42
+    [Tags]    host:${HOST}    -crm
     No Operation
 
-Remove common tag
-    [Documentation]    Test has only tag 'requirement: 42'.
+Test4
+    # crm, sprint:33, sprint:42
     [Tags]    -smoke
     No Operation
 
-Remove common tag using a pattern
-    [Documentation]    Test has only tag 'smoke'.
-    [Tags]    -requirement: *
+Test5
+    # (spring:33 is a  global tag an cannot be removed!)
+    # crm, smoke, sprint:33
+    [Tags]    -sprint:*
     No Operation
 
-Set Tags and Remove Tags keywords
-    [Documentation]    This test has tags 'smoke', 'example' and 'another'.
+Test6
+    # crm, sprint:33, smoke, sprint:42, example, another
     Set Tags    example    another
-    Remove Tags    requirement: *
+
+Test7
+    # crm, sprint:33, target:TEST
+    [Tags]    target:${ENVIRONMENT}    -s:*    crm
+    No Operation

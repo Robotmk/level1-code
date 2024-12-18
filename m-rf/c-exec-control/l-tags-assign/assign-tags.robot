@@ -1,34 +1,35 @@
 *** Settings ***
-Test Tags       requirement: 42    smoke
+Documentation   Execute with: 
+...   robot --settag crm --settag sprint:33 assign-tags.robot
+Test Tags       sprint:42    smoke
 
 *** Variables ***
 ${HOST}         10.0.1.42
 ${ENVIRONMENT}   TEST
 
 *** Test Cases ***
-No own tags
+Test 1
     No Operation
 
-Own tags
+Test 2
     [Tags]    not ready
     No Operation
 
-Own tags with variable
-    [Tags]    host: ${HOST}
+Test 3
+    [Tags]    host:${HOST}    -crm
     No Operation
 
-Remove common tag
+Test4
     [Tags]    -smoke
     No Operation
 
-Remove common tag using a pattern
-    [Tags]    -requirement: *
+Test5
+    [Tags]    -sprint:*
     No Operation
 
-Set Tags and Remove Tags keywords
+Test6
     Set Tags    example    another
-    Remove Tags    requirement: *
 
-Set Tag With Environment Variable
-    [Tags]    environment:${ENVIRONMENT}
+Test7
+    [Tags]    target:${ENVIRONMENT}    -s*    crm
     No Operation
