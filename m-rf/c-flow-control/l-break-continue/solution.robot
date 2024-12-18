@@ -17,11 +17,13 @@ Find Target Value
     END
     Log    Search completed
 
-Skip Negative Numbers
+Find Negative Numbers
     [Documentation]  This test case returns only positive numbers form the list.ssing positive numbers...
     VAR   @{positive_numbers}
     FOR    ${num}    IN    @{NUMBERS}
         Log    Checking number: ${num}
         IF  ${num} <= 0   CONTINUE  ELSE  Append To List   ${positive_numbers}   ${num}
+        # This works also: 
+        # IF  ${num} <= 0   No Operation   ELSE  Append To List   ${positive_numbers}   ${num}
     END
     Log   Positive numbers: @{positive_numbers}

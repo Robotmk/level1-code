@@ -6,23 +6,21 @@ Library    Collections
 
 *** Test Cases ***
 Find Target Value
-    [Documentation]  This test case finds the target number from the list.
+    [Documentation]  This test case logs when the target number is found in the numbers list.
     VAR  ${target}   7
-    FOR    ${num}    IN    @{NUMBERS}
-        Log    Checking number: ${num}
-        IF    ${num} == ${target}
-            Log    Target number found: ${num}
-            No Operation
-        END
-    END
-    Log    Search completed
+    # FOR ...
+    #     IF   ...
+    #         Log    Target number found: ${num}
+    #         ...
+    #     END
+    # END
 
-Skip Negative Numbers
-    [Documentation]  This test case returns only positive numbers form the list.
-    Log    Only processing positive numbers...
+Find Negative Numbers
+    [Documentation]  This test case logs only the POSITIVE numbers from the list.
+    # Use: 
+    # Append To List   ${list}   ${item_to_add}
     VAR   @{positive_numbers}
-    FOR    ${num}    IN    @{NUMBERS}
-        Log    Checking number: ${num}
-        IF  ${num} <= 0   No Operation   ELSE  Append To List   ${positive_numbers}   ${num}
+    FOR  ...
+        IF  ...
     END
     Log   Positive numbers: @{positive_numbers}
