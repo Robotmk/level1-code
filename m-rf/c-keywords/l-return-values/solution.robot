@@ -13,7 +13,7 @@ My Test 1
 My Test 2
     ${num1}  ${num2}  ${num3}=  Return Three Values
     ${result} =  Sum Of  ${num1}  ${num2}  ${num3}
-    Should Be Equal  ${result}  ${EXPECTED_RESULT}
+    Should Be Equal As Integers  ${result}  ${EXPECTED_RESULT}
 *** Keywords ***
 
 Sum Of
