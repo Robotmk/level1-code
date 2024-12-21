@@ -5,6 +5,14 @@ Documentation      Here we have documentation for this suite.
 *** Variables ***
 ${STRING}          This is a long string. It has multiple sentences 
 ...    and it gets quit long. Someone has to break it into multiple lines.
+${URL}             https://example.com/search
+...    ?query=robot+framework
+...    &page=1
+...    &filter=recent
+...    &lang=en
+...    &category=test-automation
+...    separator=
+
 *** Test Cases ***
 # These two test cases are for demonstration purposes only and are 
 # intended to give you the opportunity to practice how overlong 
@@ -25,3 +33,4 @@ Test 2
     Log    Log the name of the variable: \${STRING}
     Log    Log this path: C:\\better\\use\\forward\\slashes
     Log    Write a comment behind this line.    # This is a comment.
+    Log    ${URL}
