@@ -1,16 +1,21 @@
 *** Settings ***
-Documentation    
-Resource  ./${CMDVAR}.resource
+Resource  ./${LOADRES}.resource
 
 *** Variables ***
-${BASKET_CONTENT}  Bananas (from suite vars)
+${LOADRES}         Cherries
+${MEAT}            Chicken
+${MEAT}            Crocodile
 
 *** Test Cases ***
 
-Show The Basket
+Show The Basket 1
     Log To Console  The \${BASKET} contains: ${BASKET_CONTENT}
     Log To Console  Variable \${MEAT}: ${MEAT}
-    Log To Console  Variable \${CMDVAR}: ${CMDVAR} (not overridden by Apple-Res-2.resource)
+    VAR  ${BASKET_CONTENT}  Smarties  scope=suite
+    VAR  ${MEAT}    Giraffe
 
 
-# TODO zeige das Suite-scope nicht rekursiv ist.
+Show The Basket 2
+    Log To Console  The \${BASKET} contains: ${BASKET_CONTENT}
+    Log To Console  Variable \${MEAT}: ${MEAT}
+
