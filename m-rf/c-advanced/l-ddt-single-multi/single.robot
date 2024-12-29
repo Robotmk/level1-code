@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     A suite which demonstrates data-driven testing, 
-...  with a test scoped template and a SINGLE test for all data sets. 
+...  with a SINGLE test for all data sets. 
 Resource          calc.resource
 Test Template     Calculate Sum
 

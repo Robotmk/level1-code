@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     A suite which demonstrates data-driven testing, 
-...  with a global test template and one test for each data set. 
+...  with one test for each data set. 
 Resource          calc.resource
 Test Template     Calculate Sum
 
