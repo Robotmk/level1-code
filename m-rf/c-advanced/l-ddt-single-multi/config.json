@@ -12,6 +12,10 @@
         {
             "fileName": "calc.resource",
             "hidden": false
+        },
+        {
+            "fileName": "solution.robot",
+            "hidden": false
         }
     ],
     "robotArgs": {
