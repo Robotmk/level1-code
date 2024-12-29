@@ -1,17 +1,12 @@
 *** Settings ***
 Documentation     A suite which demonstrates data-driven testing, 
 ...  with a global test template and one test for each data set. 
+Resource          calc.resource
 Test Template     Calculate Sum
 
 *** Test Cases ***              
-Test One  1  1
-Test Two  1  2
-Test Three  2  3
-Test Four  3  4
-Test Five  5  5
-
-*** Keywords ***
-Calculate Sum
-    [Arguments]    ${no1}    ${no2} 
-    ${total}=      Evaluate    ${no1} + ${no2}
-    RETURN    ${total}
+Calculation One  1  1
+Calculation Two  1  2
+Calculation Three  2  3
+Calculation Four  3  4
+Calculation Five  5  5

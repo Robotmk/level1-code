@@ -8,6 +8,10 @@
         {
             "fileName": "tpl_multi.robot",
             "hidden": false
+        },
+        {
+            "fileName": "calc.resource",
+            "hidden": false
         }
     ],
     "robotArgs": {
