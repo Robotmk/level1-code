@@ -8,5 +8,7 @@ Test Template     Calculate Sum
 Calculation One  1  1
 Calculation Two  1  2
 Calculation Three  2  3
-Calculation Four  3  4
-Calculation Five  5  5
+Calculation Four  
+    [Template]  Calculate Product
+    3  4
+    5  5
