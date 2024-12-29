@@ -1,0 +1,20 @@
+{
+    "name": "Example",
+    "files": [
+        {
+            "fileName": "tpl_single.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "tpl_multi.robot",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.0",
+    "requirements": [
+      
+    ]
+}
