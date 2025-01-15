@@ -1,0 +1,37 @@
+# create a dedicated output dir for each execution
+output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+# folders to add to the Python search path
+extend-python-path = [
+    # library importer resources
+    "./Resources/Libraries",
+    # POM
+    "./Resources/PageObjects",
+    # Resources shared locally within the project and across different projects (git submodule etc)
+    "./Resources/Common/local",
+    "./Resources/Common/shared",
+    # Test data and Variables
+    "./Resources/Data",
+]
+
+# [env]
+# ENV_VAR = "1"
+
+[variables]
+BROWSER = "chromium"
+
+# ####################
+
+[profiles.PROD]
+[profiles.PROD.extend-variables]
+ENVIRONMENT = "PROD"
+PROXY = { expr = "'NO' if environ.get('RMK_DEV_HOST') else ''" }
+
+# ---- 
+
+[profiles.TEST]
+inherits = ["PROD"]
+
+[profiles.TEST.extend-variables]
+ENVIRONMENT = "TEST"
+PROXY = { expr = "'NO' if environ.get('RMK_DEV_HOST') else ''" }
