@@ -4,18 +4,16 @@
 
 
 *** Settings ***
-# It is only a resource file, so the library import isn't necessary. But to avoid to get a
-# bunch of compile errors in the IDE the library is imported anyway.
-Library     ImageHorizonLibrary    
-...    keyword_on_failure=No Operation
+Resource    ../libraries/ImageHorizonLibrary.resource
 Library     OperatingSystem
 Library     ScreenCapLibrary
 Library  String
-Resource  Common.resource
+#Resource  Common.resource
 
 *** Variables ***
-${CONFIDENCE_LOW}       0.8
 ${IMAGES_ROOT}  ${ROOT_DIR}${/}images
+${CONFIDENCE_LOW}       0.8
+
 
 *** Keywords ***
 Change Image Folder    # robocop: disable:too-few-calls-in-keyword
@@ -86,7 +84,6 @@ Wait For And Double Click
     [Documentation]    Waits for the given image and double clicks on it. Returns the location of the found image
     [Arguments]    ${reference_image}    ${timeout}=10
     ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    Sleep    1s    # Wait until content has loaded properly
     ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
     MoveDoubleClick    ${location}
     RETURN    ${location}
@@ -97,7 +94,6 @@ Wait For And Context Click
     ...    the location of the found image.
     [Arguments]    ${reference_image}    ${timeout}=10
     ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    Sleep    1s    # Wait until content has loaded properly
     ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
     MoveClick    ${location}    button=right
     RETURN    ${location}
@@ -115,7 +111,6 @@ Wait For And Click To The Above Of
     ...    moved in Y-direction by the given offset.
     [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
     ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    Sleep    1s    # Wait until content has loaded properly
     ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
     ImageHorizonLibrary.Click To The Above Of    ${location}    ${offset}    ${clicks}
 
@@ -125,7 +120,6 @@ Wait For And Click To The Below Of
     ...    moved in Y-direction by the given offset.
     [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
     ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    Sleep    1s    # Wait until content has loaded properly
     ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
     ImageHorizonLibrary.Click To The Below Of    ${location}    ${offset}    ${clicks}
 
@@ -135,7 +129,6 @@ Wait For And Click To The Right Of
     ...    moved in X-direction by the given offset.
     [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
     ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    Sleep    1s    # Wait until content has loaded properly
     ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
     ImageHorizonLibrary.Click To The Right Of    ${location}    ${offset}    ${clicks}
 
@@ -145,7 +138,6 @@ Wait For And Click To The Left Of
     ...    moved in negative X-direction by the given offset.
     [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
     ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    Sleep    1s    # Wait until content has loaded properly
     ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
     ImageHorizonLibrary.Click To The Left Of    ${location}    ${offset}    ${clicks}
 
@@ -163,7 +155,7 @@ Should Not Exist
     # SME: commented out, senseless
     #IF    '${exist}'=='${true}'    Take Screenshot
     #Should Not Be True    ${exist}    msg=The given image ${reference_image} should not exist, but it does.
-    [Return]  ${exists}
+    RETURN  ${exists}
 
 Wait For And Input Text RightOf
     [Documentation]
@@ -171,7 +163,6 @@ Wait For And Input Text RightOf
     ...    enters the given text
     [Arguments]    ${reference_image}    ${offset}    @{text}    ${timeout}=10
     ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    Sleep    1s    # Wait until content has loaded properly
     ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
     ImageHorizonLibrary.Click To The Right Of    ${location}    ${offset}
     ImageHorizonLibrary.Type    @{text}
