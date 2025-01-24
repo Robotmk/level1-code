@@ -1,10 +1,9 @@
 *** Settings ***
-Documentation  - Removed the IHL import from the suite file, moved it 
-...  into a separate "library importer" resource file
-...  - IHL_Keywords.resource imports the IHL from a resource file
-...  - Created Puter keywords
+Documentation  - Created Puter keyword "Open Devcenter" in the Puter resource
+...    - Removed the IHL import from the Puter resource file, and moved it
+...      into a separate "library importer" resource file
+...    - IHL_Keywords.resource imports the IHL from a resource file
 
-Resource  Resources/Common/IHL_keywords.resource
 Resource  Resources/Puter/Puter.resource
 
 Suite Setup    Open Puter

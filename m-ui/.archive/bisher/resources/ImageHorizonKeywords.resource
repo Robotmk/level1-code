@@ -105,42 +105,6 @@ Wait For And Click And Move Away
     Move Relative To    ${location}    50    50
     RETURN    ${location}
 
-Wait For And Click To The Above Of
-    [Documentation]
-    ...    Waits for the given image and clicks on the postion, which is the center postion of the image
-    ...    moved in Y-direction by the given offset.
-    [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
-    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ImageHorizonLibrary.Click To The Above Of    ${location}    ${offset}    ${clicks}
-
-Wait For And Click To The Below Of
-    [Documentation]
-    ...    Waits for the given image and clicks on the postion, which is the center postion of the image
-    ...    moved in Y-direction by the given offset.
-    [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
-    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ImageHorizonLibrary.Click To The Below Of    ${location}    ${offset}    ${clicks}
-
-Wait For And Click To The Right Of
-    [Documentation]
-    ...    Waits for the given image and clicks on the postion, which is the center postion of the image
-    ...    moved in X-direction by the given offset.
-    [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
-    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ImageHorizonLibrary.Click To The Right Of    ${location}    ${offset}    ${clicks}
-
-Wait For And Click To The Left Of
-    [Documentation]
-    ...    Waits for the given image and clicks on the postion, which is the center postion of the image
-    ...    moved in negative X-direction by the given offset.
-    [Arguments]    ${reference_image}    ${offset}    ${timeout}=10    ${clicks}=1
-    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ${location}=    ImageHorizonLibrary.Wait For    ${reference_image}    ${timeout}
-    ImageHorizonLibrary.Click To The Left Of    ${location}    ${offset}    ${clicks}
-
 Should Not Exist
     [Documentation]    Returns whether the given image exists.
     ...  If no timeout is given, the image must be found immediately.
