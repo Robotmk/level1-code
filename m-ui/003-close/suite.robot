@@ -6,7 +6,7 @@ Suite Teardown    Close Keepass
 
 *** Variables ***
 ${ROOT_DIR}  ${CURDIR}
-${IMAGES_ROOT}  ${ROOT_DIR}/Resources/Application/images
+${IMAGES_ROOT}  ${ROOT_DIR}/Resources/Keepass/images
 
 *** Test Cases ***
 
