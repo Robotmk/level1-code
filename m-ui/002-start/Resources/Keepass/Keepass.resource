@@ -3,10 +3,9 @@ Library  Process
 Resource  ../Common/IHL_keywords.resource
 
 *** Variables ***
-# Path separators are platform dependent; Shift+rightlick on Keepass.exe and select 
-# "Copy as path" to get the correct path. 
+# Path separators are platform dependent;
 # Instead of a hardcoded user profile path, you can use %USERPROFILE% 
-${KEEPASS_EXE}  %{USERPROFILE}/Downloads/KeePass-2.57.1/KeePass.exe
+${KEEPASS_EXE}  %{USERPROFILE}/bin/KeePass.exe
 
 *** Keywords ***
 Open Keepass

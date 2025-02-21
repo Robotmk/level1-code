@@ -5,7 +5,7 @@ Resource  ../Common/IHL_keywords.resource
 Resource       ../Common/Common_keywords.resource
 
 *** Variables ***
-${KEEPASS_EXE}  %{USERPROFILE}/Downloads/KeePass-2.57.1/KeePass.exe
+${KEEPASS_EXE}  %{USERPROFILE}/bin/KeePass.exe
 
 *** Keywords ***
 Open Keepass
