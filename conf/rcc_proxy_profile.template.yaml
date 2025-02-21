@@ -1,4 +1,4 @@
-name: Proxy
+name: MyProxy
 description: RCC proxy profile
 settings:
   certificates:
@@ -8,6 +8,6 @@ settings:
     https-proxy: 'http://myproxy.local:3128'
     http-proxy: 'http://myproxy.local:3128'
   meta:
-    name: Proxy
+    name: MyProxy
     description: RCC proxy profile
     source: Robotmk
