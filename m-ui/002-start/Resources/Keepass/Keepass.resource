@@ -5,7 +5,7 @@ Resource  ../Common/IHL_keywords.resource
 *** Variables ***
 # Path separators are platform dependent;
 # Instead of a hardcoded user profile path, you can use %USERPROFILE% 
-${KEEPASS_EXE}  %{USERPROFILE}/bin/KeePass.exe
+${KEEPASS_EXE}  %{USERPROFILE}/bin/keepass/KeePass.exe
 
 *** Keywords ***
 Open Keepass
