@@ -3,7 +3,7 @@ Library  Process
 Resource  ../Common/IHL_keywords.resource
 
 *** Variables ***
-${KEEPASS_EXE}  %{USERPROFILE}/bin/KeePass.exe
+${KEEPASS_EXE}  %{USERPROFILE}/bin/keepass/KeePass.exe
 
 *** Keywords ***
 Open Keepass
