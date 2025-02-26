@@ -61,6 +61,10 @@ if ([string]::IsNullOrEmpty($spaceName)) {
 
 Write-Host "Activating environment in space: $spaceName"
 
+# Store current directory
+$originalDir = Get-Location
+
+
 # Update rcc command
 if ($createOnly) {
     rcc ht vars --space $spaceName -r "$robotPath\robot.yaml"
@@ -75,6 +79,8 @@ if ($LASTEXITCODE -eq 0) {
     } else {
         Write-Host "OK: Environment in space $spaceName activated."
     }
+    # Change back to original directory
+    Set-Location $originalDir
 } else {
     Write-Host "Error: Failed to activate environment in space $spaceName."
     exit 1
