@@ -16,3 +16,6 @@ XPath And CSS Selectors In Action
     Highlight Elements  //h1
     # explicit use of XPath
     Highlight Elements  xpath=//h1
+    # SOLUTION
+    Highlight Elements  aside.learn   # CSS
+    Highlight Elements  //aside[@class='learn']   # XPath
