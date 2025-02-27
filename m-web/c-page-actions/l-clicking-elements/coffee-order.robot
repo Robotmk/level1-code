@@ -12,4 +12,4 @@ Order Two Coffee
     # Order 1 Cafe Latte
     # Order 1 Espresso
     # Go to Basket
-    # Remove both cafe
+    # Remove both items

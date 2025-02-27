@@ -7,7 +7,7 @@ ${URL}  https://coffee-cart.app
 
 *** Test Cases ***
 
-Put Two Coffe Into Basket
+Order Two Coffee
     Click  data-test=Espresso
     Click  data-test=Cafe_Latte
     Click  text=cart (2)
