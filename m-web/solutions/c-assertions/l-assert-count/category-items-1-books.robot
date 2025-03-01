@@ -10,7 +10,7 @@ ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '
 *** Test Cases ***
 
 Test Product Category Content
-    VAR  ${category}  Books
+    VAR  ${category}  XXXXXXXXXBooks
     # Navigate to the "books" category
     Click  "${category}"
     Get Element Count  
