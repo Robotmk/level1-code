@@ -8,4 +8,4 @@ ${URL}  https://todomvc.com/examples/vue/dist/#/
 *** Test Cases ***
 
 XPath And CSS Selectors In Action 
-    No Operation
+    Highlight Elements  input[placeholder*='needs']
