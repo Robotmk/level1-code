@@ -1,3 +1,3 @@
 *** Settings ***
 # Import the Browser Library
-Library  Browser
+Library  Browser  enable_playwright_debug=disabled
