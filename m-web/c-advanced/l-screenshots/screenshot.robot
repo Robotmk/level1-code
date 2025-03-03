@@ -1,5 +1,6 @@
 *** Settings ***
 #Resource  ../../Resources/BrowserCommon.resource
+# using another library import for a custom error handler:
 Resource  ../../Resources/embed-screenshots/BrowserCommon.resource
 Suite Setup  Browser Init
 Test Setup  Session Init  ${URL}
@@ -25,7 +26,4 @@ Add To Cart
     Select options by  id=sizeSelect  value  ${size}
     Select options by  id=quantitySelect  value  ${quantity}
     Click  text=ADD TO CART
-    Click  text=view cart
-    Take screenshot  filename=EMBED  selector=div.main-frame > div.subsection[visible]
-    Go To  ${URL}
-    
+    # -> view cart and take an embedded screenhot of the cart content
