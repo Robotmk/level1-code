@@ -7,3 +7,4 @@ dependencies:
   - pip:
     - robotframework==7.1.1
     - robotframework-jsonlibrary
+    - robotframework-requests
