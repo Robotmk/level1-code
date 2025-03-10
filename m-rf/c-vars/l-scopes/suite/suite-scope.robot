@@ -2,14 +2,14 @@
 Documentation    This suite demonstrates the use of suite and test variables.
 
 *** Variables ***
-${CAR}      Ford
-${COLOR}    blue  
+${CAR}      Lexus
+${COLOR}    black  
 
 *** Test Cases ***
 Test First Car
-    VAR  ${CAR}  Volvo  scope=test
+    VAR  ${CAR}  VW  scope=test
     Log  Choosing a ${COLOR} ${CAR}
-    VAR  ${COLOR}  red  scope=suite
+    VAR  ${COLOR}  yellow  scope=suite
 
 Test Second Car
     Log  Choosing now a ${COLOR} ${CAR}!

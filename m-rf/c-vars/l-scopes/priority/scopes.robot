@@ -9,7 +9,7 @@ ${MEAT}            Crocodile
 *** Test Cases ***
 
 Show The Basket 1
-    Log To Console  The \${BASKET} contains: ${BASKET_CONTENT}
+    Log To Console  The basket contains: ${BASKET_CONTENT}
     Log To Console  Variable \${MEAT}: ${MEAT}
     Log To Console  Variable \${COLOR}: ${COLOR}
     VAR  ${BASKET_CONTENT}  Smarties  scope=suite
@@ -18,7 +18,7 @@ Show The Basket 1
 
 
 Show The Basket 2
-    Log To Console  The \${BASKET} contains: ${BASKET_CONTENT}
+    Log To Console  The basket contains: ${BASKET_CONTENT}
     Log To Console  Variable \${MEAT}: ${MEAT}
     Log To Console  Variable \${COLOR}: ${COLOR}
 
