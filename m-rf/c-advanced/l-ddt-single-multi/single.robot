@@ -5,7 +5,7 @@ Resource          calc.resource
 Test Template     Calculate Sum
 
 *** Test Cases ***              
-Calculate Sums  
+Calculations  
     1  1
     1  2
     2  3

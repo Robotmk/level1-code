@@ -1,8 +1,7 @@
 *** Settings ***
 Resource  res_A.resource
 
-*** Variables ***
-${VAR_A}   suite
+
 
 *** Test Cases ***
 Test 1

@@ -14,3 +14,10 @@ ${ANSWER}            The answer is ${INTEGER}    # This will be 'The answer is 4
 *** Test Cases ***
 Test 1
     Log To Console   ${STRING}
+    Log To Console    ${STILL_STRING}
+    Log To Console    ${INTEGER}
+    Log To Console    ${FLOAT}
+    Log To Console    ${BOOLEAN}
+    Log To Console    ${NOTHING}
+    Log To Console    ${EMPTY_STRING}
+    Log To Console    ${ANSWER}
