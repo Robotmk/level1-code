@@ -1,7 +1,3 @@
-*** Settings ***
-Library    BuiltIn
-Library    String
-
 *** Variables ***
 ${GREETING}      Hello, Robot Framework!
 ${USERNAME}      test_user

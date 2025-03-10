@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation      Here we have documentation for this suite. Documentation is often quite long. It can also contain multiple paragraphs.
 *** Variables ***
-${STRING}          This is a long string. It has multiple sentences and it gets quit long. Someone has ti break it into multiple lines.
+${STRING}          This is a long string. It has multiple sentences and it gets quit long. Someone has to break it into multiple lines.
 ${URL}             https://example.com/search?query=robot+framework&page=1&filter=recent&lang=en&category=test-automation
 
 *** Test Cases ***
@@ -9,7 +9,7 @@ ${URL}             https://example.com/search?query=robot+framework&page=1&filte
 Test 1
     Log Many  This is log message 1.  This is log message 2.  This is log message 3.  This is log message 4.  This is log message 5. 
 
-Test 2
+
     Log    Log a leading hash.
     Log    Log a leading and trailing space. 
     Log    Log 1 leading and 5 trailing spaces. 

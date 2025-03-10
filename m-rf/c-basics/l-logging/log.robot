@@ -8,7 +8,7 @@ ${PASSWORD}       password123
 
 *** Test Cases ***
 Log Level Demonstration
-    Log    Starting Log Level Demonstration test    level=INFO
+    Log    Starting Log Level Demonstration test    
     Log To Console    Executing test case... (visible in console only)
     
     Log    Attempting to open browser and navigate to ${URL}    level=DEBUG
@@ -26,5 +26,5 @@ Log Level Demonstration
     Run Keyword If    not ${login_successful}    Fail    Login failed: Invalid credentials or timeout
 
     # Final log message to indicate the end of the test
-    Log    Test completed. Cleaning up resources...    level=INFO
+    Log    Test completed. Cleaning up resources...    
     Log To Console    End of test case execution.
