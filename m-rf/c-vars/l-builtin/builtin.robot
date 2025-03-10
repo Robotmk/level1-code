@@ -9,10 +9,6 @@ Log Paths
     Log Builtin Path Variables
     My-Res.Log The Resource Path Variables
 
-Log Builtin Variables from Resource file
-    [Documentation]    This test case logs different path variables form the Resource file.
-    My-Res.Log The Resource Path Variables
-
 Log Builtin Name Variables
     [Documentation]    This test case logs the names of the variables.
     Log    The name of the Suite is in {SUITE_NAME}: ${SUITE_NAME}
