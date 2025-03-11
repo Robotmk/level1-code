@@ -23,9 +23,9 @@ Logging The Dicts
     Log Many    &{MORE_USER_DATA}
 
 Logging Dict Items
-    Log    The name is: ${USER_DATA}[name]
-    Log    The password is: ${USER_DATA}[password]
-    Log    The name is: ${MORE_USER_DATA}[name]
-    Log    The password is: ${MORE_USER_DATA}[password]
-    Log    The role is: ${MORE_USER_DATA}[role]
-    Log    The status is: ${MORE_USER_DATA}[status]
+    Log    The name is: ${USER_DATA}[${KEYS[0]}]
+    Log    The password is: ${USER_DATA}[${KEYS[1]}]
+    Log    The name is: ${MORE_USER_DATA}[${KEYS[0]}]
+    Log    The password is: ${MORE_USER_DATA}[${KEYS[1]}]
+    Log    The role is: ${MORE_USER_DATA}[${KEYS[2]}]
+    Log    The status is: ${MORE_USER_DATA}[${KEYS[3]}]

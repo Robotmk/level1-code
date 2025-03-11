@@ -5,6 +5,10 @@
         {
             "fileName": "lists-dict.robot",
             "hidden": false
+        },
+        {
+            "fileName": "lists-dict-solution.robot",
+            "hidden": false
         }
     ],
     "robotArgs": {
