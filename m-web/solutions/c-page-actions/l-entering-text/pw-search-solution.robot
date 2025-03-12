@@ -13,6 +13,11 @@ Quick Search On Playwright
     Fill Text  input.DocSearch-Input  download
     Keyboard Key  press  Enter
 
+Quick Search On Playwright Using Shortcut
+    Press Keys  Ctrl+k
+    Fill Text  input.DocSearch-Input  download
+    Keyboard Key  press  Enter
+
 Delayed Search On Playwright
     Click  button.DocSearch-Button
     Type Text  input.DocSearch-Input  download  delay=400 ms
