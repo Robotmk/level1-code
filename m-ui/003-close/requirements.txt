@@ -1,0 +1,5 @@
+robotframework==7.1.1
+PyScreeze==0.1.29
+PyAutoGUI==0.9.54
+robotframework-imagehorizonlibrary==1.0
+robotframework-screencaplibrary==1.6.0
