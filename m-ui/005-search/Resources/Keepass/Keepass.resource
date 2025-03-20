@@ -33,7 +33,7 @@ Open Database
 Search Entry
     [Documentation]  Searches for the entry given by argument and verifies
     ...  the result.  
-    [Arguments]  ${entryname}  ${entryimg}
+    [Arguments]  ${entryname}
     # Open the Search dialogue
     Press Combination    Key.Ctrl  f
     # Place the cursor into the search field
@@ -41,4 +41,4 @@ Search Entry
     # enter the search string and confirm with enter
     Type    ${entryname}   Key.enter
     # Expect the result somewhere on the screen
-    Wait for   ${entryimg}
+    Wait for   ${entryname}

@@ -17,7 +17,7 @@ ${ENTRY_EXP_PASS}     yV4d6taNbkDB5W8U2pI9
 *** Test Cases ***
 
 Verify Entry
-    [Documentation]  Verifies that an entry exists in the database
+    [Documentation]  Verifies that an entry exists in the database.
     Open Database    ${DATABASE}    ${DATABASE_PW}
     Search Entry   ${DB_ENTRY_NAME}    ${ENTRY_IMG}
     # New keyword which reads the password from an entry and compares it 
