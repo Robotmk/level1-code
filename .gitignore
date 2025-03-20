@@ -10,6 +10,7 @@ output.xml
 report.html
 *.log
 output/
+results
 
 # Virtual environment
 venv/
