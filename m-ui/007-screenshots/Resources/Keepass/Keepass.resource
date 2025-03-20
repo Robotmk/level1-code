@@ -1,7 +1,6 @@
 *** Settings ***
 Library  Process
 Resource  ../Common/IHL_keywords.resource
-# import the screenshot keyword (ScreencapLibrary)
 Resource       ../Common/Common_keywords.resource
 
 *** Variables ***
@@ -9,19 +8,15 @@ ${KEEPASS_EXE}  %{USERPROFILE}/bin/keepass/KeePass.exe
 
 *** Keywords ***
 Open Keepass
-    # initialize the variable with a False value. 
     VAR  ${SUITE_SETUP_OK}  False  scope=SUITE
-    # (Setup steps...)
     ${handle}=  Start Process    ${KEEPASS_EXE}
     VAR  ${KEEPASS_HANDLE}  ${handle}  scope=suite
     Wait For    menubar    timeout=10
-    # (Setup finished)
-    # this only happens when the Setup was successful:
     VAR  ${SUITE_SETUP_OK}  True  scope=SUITE
 
 Close Keepass
     IF  '${SUITE_SETUP_OK}'=='False'  Common_keywords.Take Screenshot
-    Terminate Process  ${KEEPASS_HANDLE}  kill=True
+    Terminate Process  ${KEEPASS_HANDLE}  kill=True   
 
 Open Database
     [Documentation]  Opens a Keepass database file and waits for the 
@@ -43,11 +38,11 @@ Open Database
 Search Entry
     [Documentation]  Searches for the entry given by argument and verifies
     ...  the result.  
-    [Arguments]  ${entryname}  ${entryimg}
+    [Arguments]  ${entryname}
     Press Combination    Key.Ctrl  f
     Wait For And Click To The Right Of  find_label  100
     Type    ${entryname}   Key.enter
-    Wait for   ${entryimg}
+    Wait for   ${entryname} 
 
 Verify Password
     [Documentation]  Reads the Password of a given entry and compares it 

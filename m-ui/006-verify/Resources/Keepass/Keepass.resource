@@ -33,11 +33,11 @@ Open Database
 Search Entry
     [Documentation]  Searches for the entry given by argument and verifies
     ...  the result.  
-    [Arguments]  ${entryname}  ${entryimg}
+    [Arguments]  ${entryname}
     Press Combination    Key.Ctrl  f
     Wait For And Click To The Right Of  find_label  100
     Type    ${entryname}   Key.enter
-    Wait for   ${entryimg}
+    Wait for   ${entryname}
 
 Verify Password
     [Documentation]  Reads the Password of a given entry and compares it 

@@ -16,10 +16,7 @@ Open Keepass
 
 Close Keepass
     IF  '${SUITE_SETUP_OK}'=='False'  Common_keywords.Take Screenshot
-    Terminate Process  ${KEEPASS_HANDLE}  kill=True
-    # IPORTANT: Stop the video recording finally for the case that the actual 
-    # Stopping keyword was not executed
-    Run Keyword And Ignore Error  Stop Video Recording  save_to_disk=False
+    Terminate Process  ${KEEPASS_HANDLE}  kill=True   
 
 Open Database
     [Documentation]  Opens a Keepass database file and waits for the 
