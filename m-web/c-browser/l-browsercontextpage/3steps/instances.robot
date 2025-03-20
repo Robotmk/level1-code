@@ -11,3 +11,4 @@ Open RobotFramework Page
     New Context  viewport={"width": 800, "height": 600}  locale=en-US
     # Open the RF page
     New Page    url=https://robotframework.org
+

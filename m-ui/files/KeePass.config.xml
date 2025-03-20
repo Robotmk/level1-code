@@ -15,10 +15,19 @@
 		</LastUsedFile>
 		<MostRecentlyUsed>
 			<MaxItemCount>12</MaxItemCount>
-			<Items />
+			<Items>
+				<ConnectionInfo>
+					<Path>..\..\Documents\keepass\Resources\Data\robotmk-db.kdbx</Path>
+					<CredProtMode>Obf</CredProtMode>
+					<CredSaveMode>NoSave</CredSaveMode>
+				</ConnectionInfo>
+			</Items>
 		</MostRecentlyUsed>
-		<WorkingDirectories />
+		<WorkingDirectories>
+			<Item>Database@..\..\Documents\keepass\Resources\Data</Item>
+		</WorkingDirectories>
 		<Start>
+			<OpenLastFile>false</OpenLastFile>
 			<CheckForUpdate>false</CheckForUpdate>
 			<CheckForUpdateConfigured>true</CheckForUpdateConfigured>
 		</Start>
@@ -33,8 +42,8 @@
 	</Application>
 	<Logging />
 	<MainWindow>
-		<X>449</X>
-		<Y>230</Y>
+		<X>1066</X>
+		<Y>451</Y>
 		<Width>670</Width>
 		<Height>525</Height>
 		<SplitterHorizontalFrac>0.8333</SplitterHorizontalFrac>
@@ -125,8 +134,13 @@
 		<UserProfiles />
 	</Search>
 	<Defaults>
-		<OptionsTabIndex>0</OptionsTabIndex>
-		<KeySources />
+		<OptionsTabIndex>5</OptionsTabIndex>
+		<KeySources>
+			<Association>
+				<DatabasePath>..\..\Documents\keepass\Resources\Data\robotmk-db.kdbx</DatabasePath>
+				<Password>true</Password>
+			</Association>
+		</KeySources>
 		<Duplication />
 		<Print>
 			<MainFont>

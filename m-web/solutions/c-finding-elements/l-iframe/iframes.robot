@@ -8,6 +8,5 @@ ${URL}  https://iframe.robotmk.org
 *** Test Cases ***
 
 Highlight ELABIT Logo
-    # Highlight the ELABIT link inside of the iframe!
-    No Operation
+    Highlight Elements  iframe >>> a.sponsor[href*='elabit']
     

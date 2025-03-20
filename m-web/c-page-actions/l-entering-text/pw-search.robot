@@ -10,9 +10,9 @@ ${URL}  https://playwright.dev
 Quick Search On Playwright
     No Operation
     # Click the Search Button
-    # Enter "download" into the search field
-    # Send the Enter key event to the browser
-
+    # Enter "download" into the search field as WORD word
+    # Use "Keyboard key" to press Enter
+    
 Delayed Search On Playwright
     No Operation
     # Click the Search Button
