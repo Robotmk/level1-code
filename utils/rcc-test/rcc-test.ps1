@@ -9,11 +9,11 @@ $env:ROBOCORP_HOME = $env:TEMP + "\rcc-test"
 
 function Main {
     CheckOS
+    SetProxy
     DownloadRCC
     RCCCleanup
     DisableTelemetry
     CheckLongPaths
-    SetProxy
     RunRCCDiag
     CreateEnv -EnvName "rf" -EnvDesc "Environment 1/2"
     CreateEnv -EnvName "pw" -EnvDesc "Environment 2/2"
@@ -71,14 +71,16 @@ function CheckLongPaths {
 function SetProxy {
     $useProxy = Read-Host "Are you behind a proxy? (y/n)"
     if ($useProxy -match "^[YyJj]") {
-        Create-ProxyProfile
+        CreateProxyProfile
         Import-ProxyProfile
         Switch-ProxyProfile -ProfileName $RCC_PROFILE_NAME
         $Global:USE_PROXY = $true
     }
+    
+
 }
 
-function Create-ProxyProfile {
+function CreateProxyProfile {
     $httpProxyAddress = Read-Host "Enter the HTTP proxy address (example: http://myproxy.local:3128)"
     $httpsProxyAddress = Read-Host "Enter the HTTPS proxy address (example: http://myproxy.local:3128)"
 
@@ -99,6 +101,9 @@ settings:
 "@
 
     $config | Out-File -FilePath "rcc-proxy-profile.yaml" -Encoding utf8
+    # set this proxy server for the current session
+    $env:HTTP_PROXY = $httpProxyAddress
+    $env:HTTPS_PROXY = $httpsProxyAddress
 }
 
 function Import-ProxyProfile {

@@ -7,10 +7,10 @@ USE_PROXY="false"
 export ROBOCORP_HOME="${TMPDIR:-/tmp}/rcc-test"
 
 function main() {
+    set_proxy
     download_rcc
     rcc_cleanup
     disable_telemetry
-    set_proxy
     run_rccdiag
     create_env rf "Environment 1/2"
     create_env pw "Environment 2/2"
@@ -85,6 +85,8 @@ EOF
     config="${config//RCC_PROFILE_NAME/$RCC_PROFILE_NAME}"
 
     echo "$config" > "rcc-proxy-profile.yaml"
+    export http_proxy=$http_proxy_address
+    export https_proxy=$https_proxy_address
 }
 
 function switch_proxy_profile() {
