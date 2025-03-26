@@ -8,6 +8,8 @@ network:
     - playwright-verizon.azureedge.net
     - registry.npmjs.org
     - pypi.org  
+    - github.com
+    - githubusercontent.com
     tls-verify:
     - anaconda.org
     - conda.anaconda.org
@@ -17,6 +19,8 @@ network:
     - playwright-verizon.azureedge.net
     - registry.npmjs.org
     - pypi.org
+    - github.com
+    - githubusercontent.com
     head-request:
     - url: https://conda.anaconda.org/conda-forge/linux-64/repodata.json
       codes: [200]
