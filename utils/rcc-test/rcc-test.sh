@@ -136,13 +136,14 @@ function unset_proxy() {
     if [ "$USE_PROXY" == "true" ]; then
         echo "👉 Unsetting proxy profile"
         rcc config switch --noprofile
-    fi
-    rcc config switch | grep "Currently active profile is: default" > /dev/null
-    if [ $? -ne 0 ]; then
-        echo "❌ Failed to unset proxy profile."
-        echo "Current profiles:"
-        rcc config switch
-        exit 1
+    
+        rcc config switch | grep "Currently active profile is: default" > /dev/null
+        if [ $? -ne 0 ]; then
+            echo "❌ Failed to unset proxy profile."
+            echo "Current profiles:"
+            rcc config switch
+            exit 1
+        fi
     fi
 }
 
