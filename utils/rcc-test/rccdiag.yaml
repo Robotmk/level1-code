@@ -1,19 +1,22 @@
 network:
     dns-lookup:
+    - anaconda.org
     - conda.anaconda.org
     - files.pythonhosted.org  
-    - registry.npmjs.org  
     - playwright.azureedge.net  
     - playwright-akamai.azureedge.net  
     - playwright-verizon.azureedge.net
+    - registry.npmjs.org
+    - pypi.org  
     tls-verify:
+    - anaconda.org
     - conda.anaconda.org
     - files.pythonhosted.org  
-    - registry.npmjs.org  
     - playwright.azureedge.net  
     - playwright-akamai.azureedge.net  
     - playwright-verizon.azureedge.net
+    - registry.npmjs.org
+    - pypi.org
     head-request:
     - url: https://conda.anaconda.org/conda-forge/linux-64/repodata.json
       codes: [200]
-

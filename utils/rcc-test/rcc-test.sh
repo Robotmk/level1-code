@@ -1,18 +1,23 @@
 #!/bin/bash
 
-RCC_DOWNLOAD_URL="https://github.com/elabit/robotmk/releases/download/v4.0.0-alpha-1/rcc_linux64"
+RCC_DOWNLOAD_URL="https://github.com/elabit/robotmk/releases/download/v4.0.0-alpha-1"
 RCC_PROFILE_NAME="RCCTestProfile"
+USE_PROXY="false"
 
+export ROBOCORP_HOME="${TMPDIR:-/tmp}/rcc-test"
 
 function main() {
     download_rcc
+    rcc_cleanup
     disable_telemetry
     set_proxy
     run_rccdiag
     create_env rf "Environment 1/2"
     create_env pw "Environment 2/2"
     unset_proxy
+    echo "========================================="
     echo "✅ Test environments created successfully"
+    echo "========================================="
 }
 
 function download_rcc() {
@@ -30,9 +35,14 @@ function download_rcc() {
     chmod +x rcc
 }
 
+function rcc_cleanup() {
+    echo "👉 Cleaning up RCC"
+    rcc config cleanup --all
+}
+
 function disable_telemetry() {
     echo "👉 Disabling telemetry"
-    rcc configure identity
+    rcc configure identity -t
 }
 
 function set_proxy() {

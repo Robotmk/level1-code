@@ -1,0 +1,13 @@
+﻿name: RCCTestProfile
+description: RCC proxy profile
+settings:
+  certificates:
+    verify-ssl: true
+  network:
+    no-proxy: 'localhost,127.0.0.1'
+    https-proxy: 'http://localhost:8118'
+    http-proxy: 'http://localhost:8118'
+  meta:
+    name: RCCTestProfile
+    description: RCC proxy profile
+    source: Robotmk
