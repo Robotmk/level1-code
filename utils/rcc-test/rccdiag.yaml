@@ -10,6 +10,10 @@ network:
     - pypi.org  
     - github.com
     - githubusercontent.com
+    - update.code.visualstudio.com
+    - vscode.download.prss.microsoft.com
+    - ms-vscode.gallery.vsassets.io
+    - marketplace.visualstudio.com
     tls-verify:
     - anaconda.org
     - conda.anaconda.org
@@ -21,6 +25,10 @@ network:
     - pypi.org
     - github.com
     - githubusercontent.com
+    - update.code.visualstudio.com
+    - vscode.download.prss.microsoft.com
+    - ms-vscode.gallery.vsassets.io
+    - marketplace.visualstudio.com
     head-request:
     - url: https://conda.anaconda.org/conda-forge/linux-64/repodata.json
       codes: [200]
