@@ -9,7 +9,7 @@ network:
     - registry.npmjs.org
     - pypi.org  
     - github.com
-    - githubusercontent.com
+    - raw.githubusercontent.com
     - update.code.visualstudio.com
     - vscode.download.prss.microsoft.com
     - ms-vscode.gallery.vsassets.io
@@ -24,7 +24,7 @@ network:
     - registry.npmjs.org
     - pypi.org
     - github.com
-    - githubusercontent.com
+    - raw.githubusercontent.com
     - update.code.visualstudio.com
     - vscode.download.prss.microsoft.com
     - ms-vscode.gallery.vsassets.io
