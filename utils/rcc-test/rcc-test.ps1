@@ -1,12 +1,17 @@
+# ================================
+# RCC Test Environment Setup
+# ================================
 
-# Set variables
+# --- Variables ---
 $RCC_DOWNLOAD_URL = "https://github.com/elabit/robotmk/releases/download/v4.0.0-alpha-1/rcc_windows64.exe"
 $RCC_PROFILE_NAME = "RCCTestProfile"
 $USE_PROXY = $false
+$RCC_PATH = Join-Path $PSScriptRoot "rcc.exe"
 
-# set ROBOCORP_HOME for the runtime of this script
-$env:ROBOCORP_HOME = $env:TEMP + "\rcc-test"
+# Set ROBOCORP_HOME for this session
+$env:ROBOCORP_HOME = Join-Path $env:TEMP "rcc-test"
 
+# --- Main Execution ---
 function Main {
     CheckOS
     VCDLLCheck
@@ -20,77 +25,32 @@ function Main {
     CreateEnv -EnvName "pw" -EnvDesc "Environment 2/2"
     UnsetProxy
     Write-Host "#######################################"
-    Write-Host "Test environments created successfully!"
+    Write-Host "RCC test finished successfully!"
     Write-Host "#######################################"
 }
 
+# --- Functions ---
 function CheckOS {
     Write-Host "+ Checking the OS"
     $os = Get-CimInstance Win32_OperatingSystem
     $version = [version]$os.Version
     $caption = $os.Caption
-    
-    # Windows 10 or Server 2019: Minimum Version is 10.0.17763
     $minSupportedVersion = [version]"10.0.17763"
-    
+
     if ($version -ge $minSupportedVersion) {
         Write-Host "OK: Supported OS detected: $caption ($version)"
     } else {
-        Write-Host "!! Unsupported OS: $caption ($version) - Windows 2019 Server / Windows 10 or higher required!"
+        Write-Host "!! Unsupported OS: $caption ($version) - Windows 10 / Server 2019 or higher required!"
         exit 1
-    }
-}
-
-function DownloadRCC {
-    # Check if RCC already exists
-    if (Test-Path "rcc.exe") {
-        return
-    }
-    Write-Host "+ Downloading RCC"   
-    Invoke-WebRequest -Uri $RCC_DOWNLOAD_URL -OutFile "rcc.exe"
-    if (-Not (Test-Path "rcc.exe")) {
-        Write-Host "!! Download of RCC failed. Please download manually: $RCC_DOWNLOAD_URL."
-        exit 1
-    }
-}
-
-function RCCCleanup {
-    Write-Host "+ Cleaning up RCC"
-    rcc.exe config cleanup --all
-    rcc.exe ht ls
-}
-
-function DisableTelemetry {
-    Write-Host "+ Disabling telemetry"
-    rcc.exe configure identity -t
-}
-
-function CheckLongPaths {
-    Write-Host "+ Checking long paths"
-    rcc.exe configure longpaths
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "!! Failed to enable long path support for Windows."
-        Write-Host "See https://learn.microsoft.com/de-de/windows/win32/fileio/maximum-file-path-limitation?tabs=registry"
-        exit 1
-    } else {
-        Write-Host "OK: Long Path Support enabled."
     }
 }
 
 function VCDLLCheck {
     Write-Host "+ Checking for vcruntime140.dll"
-    $dllsToCheck = @(
-        "vcruntime140.dll",
-        "vcruntime140_1.dll"
-    )
-    
-    $foldersToSearch = @(
-        "$env:SystemRoot\System32",
-        "$env:SystemRoot\SysWOW64"
-    )
-    
+    $dllsToCheck = @("vcruntime140.dll", "vcruntime140_1.dll")
+    $foldersToSearch = @("$env:SystemRoot\System32", "$env:SystemRoot\SysWOW64")
     $found = @()
-    
+
     foreach ($dll in $dllsToCheck) {
         foreach ($folder in $foldersToSearch) {
             $fullPath = Join-Path $folder $dll
@@ -99,15 +59,52 @@ function VCDLLCheck {
             }
         }
     }
-    
+
     if ($found.Count -gt 0) {
-        Write-Host "OK: vcruntime140.dll found on at least one location."
-        #$found | ForEach-Object { Write-Host " - $_" }
+        Write-Host "OK: vcruntime140.dll found."
     } else {
-        Write-Host "!! Neither vcruntime140.dll nor vcruntime140_1.dll was found."
-        Write-Host "Please install the Latest Microsoft Visual C++ Redistributable Version: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022"
+        Write-Host "!! Required Visual C++ DLLs not found."
+        Write-Host "Please install: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist"
+        exit 1
     }
-    
+}
+
+function DownloadRCC {
+    if (Test-Path $RCC_PATH) {
+        Write-Host "+ RCC already downloaded."
+        return
+    }
+    Write-Host "+ Downloading RCC"
+    try {
+        Invoke-WebRequest -Uri $RCC_DOWNLOAD_URL -OutFile $RCC_PATH -ErrorAction Stop
+        Write-Host "OK: RCC downloaded."
+    } catch {
+        Write-Host "!! RCC download failed: $_"
+        exit 1
+    }
+}
+
+function RCCCleanup {
+    Write-Host "+ Cleaning up RCC"
+    & $RCC_PATH config cleanup --all
+    & $RCC_PATH ht ls
+}
+
+function DisableTelemetry {
+    Write-Host "+ Disabling telemetry"
+    & $RCC_PATH configure identity -t
+}
+
+function CheckLongPaths {
+    Write-Host "+ Checking long paths"
+    & $RCC_PATH configure longpaths
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "!! Failed to enable long path support."
+        Write-Host "See: https://learn.microsoft.com/de-de/windows/win32/fileio/maximum-file-path-limitation?tabs=registry"
+        exit 1
+    } else {
+        Write-Host "OK: Long Path Support enabled."
+    }
 }
 
 function SetProxy {
@@ -118,13 +115,11 @@ function SetProxy {
         Switch-ProxyProfile -ProfileName $RCC_PROFILE_NAME
         $Global:USE_PROXY = $true
     }
-    
-
 }
 
 function CreateProxyProfile {
-    $httpProxyAddress = Read-Host "Enter the HTTP proxy address (example: http://myproxy.local:3128)"
-    $httpsProxyAddress = Read-Host "Enter the HTTPS proxy address (example: http://myproxy.local:3128)"
+    $httpProxyAddress = Read-Host "Enter the HTTP proxy address (e.g. http://myproxy.local:3128)"
+    $httpsProxyAddress = Read-Host "Enter the HTTPS proxy address (e.g. http://myproxy.local:3128)"
 
     $config = @"
 name: $RCC_PROFILE_NAME
@@ -143,7 +138,6 @@ settings:
 "@
 
     $config | Out-File -FilePath "rcc-proxy-profile.yaml" -Encoding utf8
-    # set this proxy server for the current session
     $env:HTTP_PROXY = $httpProxyAddress
     $env:HTTPS_PROXY = $httpsProxyAddress
 }
@@ -151,10 +145,10 @@ settings:
 function Import-ProxyProfile {
     Write-Host "+ Importing proxy profile"
     if (-Not (Test-Path "rcc-proxy-profile.yaml")) {
-        Write-Host "!! rcc-proxy-profile.yaml does not exist"
+        Write-Host "!! Proxy profile file not found."
         exit 1
     }
-    rcc.exe config import -f rcc-proxy-profile.yaml
+    & $RCC_PATH config import -f rcc-proxy-profile.yaml
 }
 
 function Switch-ProxyProfile {
@@ -162,21 +156,21 @@ function Switch-ProxyProfile {
         [string]$ProfileName
     )
     Write-Host "+ Switching proxy profile"
-    rcc.exe config switch --profile $ProfileName
-    $output = rcc.exe config switch
+    & $RCC_PATH config switch --profile $ProfileName
+    $output = & $RCC_PATH config switch
     if (-Not ($output -match "Currently active profile is: $ProfileName")) {
         Write-Host "!! Failed to switch proxy profile."
         Write-Host "Current profiles:"
         Write-Host $output
         exit 1
     } else {
-        Write-Host "OK: Proxy Profile $ProfileName is active now."
+        Write-Host "OK: Proxy profile $ProfileName active."
     }
 }
 
 function RunRCCDiag {
     Write-Host "+ Running rccdiag"
-    rcc.exe netdiag --checks rccdiag.yaml
+    & $RCC_PATH netdiag --checks rccdiag.yaml
 }
 
 function CreateEnv {
@@ -185,30 +179,32 @@ function CreateEnv {
         [string]$EnvDesc
     )
     Write-Host "+ Creating $EnvName environment ($EnvDesc)"
-    rcc.exe holotree vars --robot "envs/robot-$EnvName.yaml"
+    & $RCC_PATH holotree vars --robot "envs/robot-$EnvName.yaml"
     if ($LASTEXITCODE -ne 0) {
         Write-Host "!! Failed to create environment."
         UnsetProxy
         exit 1
     } else {
-        Write-Host "OK: $EnvName environment creation successfully finished."
+        Write-Host "OK: $EnvName environment created."
     }
 }
 
 function UnsetProxy {
     if ($USE_PROXY) {
         Write-Host "+ Unsetting proxy profile"
-        rcc.exe config switch --noprofile
+        & $RCC_PATH config switch --noprofile
+        $output = & $RCC_PATH config switch
+        if (-Not ($output -match "Currently active profile is: default")) {
+            Write-Host "!! Failed to unset proxy profile."
+            Write-Host "Current profiles:"
+            Write-Host $output
+            exit 1
+        } else {
+            Write-Host "OK: Proxy profile unset."
+        }        
     }
-    $output = rcc.exe config switch
-    if (-Not ($output -match "Currently active profile is: default")) {
-        Write-Host "!! Failed to unset proxy profile."
-        Write-Host "Current profiles:"
-        Write-Host $output
-        exit 1
-    }  else {
-        Write-Host "OK: Proxy Profile unloaded successfully."
-    }
+
 }
 
+# --- Start ---
 Main
