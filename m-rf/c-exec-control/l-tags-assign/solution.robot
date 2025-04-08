@@ -40,5 +40,5 @@ Test6
 
 Test7
     # crm, sprint:33, target:TEST
-    [Tags]    target:${ENVIRONMENT}    -s:*    crm
+    [Tags]    target:${ENVIRONMENT}    -s*    -crm
     No Operation

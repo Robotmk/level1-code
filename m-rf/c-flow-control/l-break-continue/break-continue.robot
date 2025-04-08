@@ -15,7 +15,7 @@ Find Target Value
     #     END
     # END
 
-Find Negative Numbers
+Find Positive Numbers
     [Documentation]  This test case logs only the POSITIVE numbers from the list.
     # Use: 
     # Append To List   ${list}   ${item_to_add}

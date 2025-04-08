@@ -17,7 +17,7 @@ Find Target Value
     END
     Log    Search completed
 
-Find Negative Numbers
+Find Positive Numbers
     [Documentation]  This test case returns only positive numbers form the list.ssing positive numbers...
     VAR   @{positive_numbers}
     FOR    ${num}    IN    @{NUMBERS}
