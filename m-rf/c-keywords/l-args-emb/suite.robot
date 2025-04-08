@@ -9,20 +9,20 @@ Without Embedded Arguments
     ${volvo}=  Get A Car  Volvo  blue
     ${bmw}=  Get A Car  BMW   black
     ${audi}=  Get A Car   Audi  white
+    Log  Cars: ${volvo}, ${bmw}, ${audi}
 
 With Embedded Arguments
-    ${volvo}=  Get A blue Volvo
-    ${bmw}=  Get A black BMW
-    ${audi}=  Get A white Audi
+    ${volvo}=  Get A "blue Volvo" car
+    ${bmw}=  Get A "black BMW" car
+    ${audi}=  Get A "white Audi" car
+    Log  Cars: ${volvo}, ${bmw}, ${audi}
 
 
 *** Keywords ***
 
 Get A Car
     [Arguments]  ${car}  ${color}
-    # ... do something with ${car} and ${color} ...
-    RETURN  ${CARS}[${car}]  ${color}
+    RETURN  A ${color} ${CARS}[${car}]
 
-Get A ${color} ${car}
-    # ... do something with ${car} and ${color} ...
-    RETURN  ${CARS}[${car}]  ${color}
+Get A "${color} ${car}" car
+    RETURN  A ${color} ${CARS}[${car}]
