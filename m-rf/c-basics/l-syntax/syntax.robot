@@ -7,9 +7,10 @@ ${URL}             https://example.com/search?query=robot+framework&page=1&filte
 *** Test Cases ***
 # These two test cases are for demonstration purposes only and are intended to give you the opportunity to practise how overlong lines can be converted into multiple lines.
 Test 1
+    # Note: The keyword "Log Many" accepts a list of strings and prints them all in one line.
     Log Many  This is log message 1.  This is log message 2.  This is log message 3.  This is log message 4.  This is log message 5. 
 
-
+Test 2
     Log    Log a leading hash.
     Log    Log a leading and trailing space. 
     Log    Log 1 leading and 5 trailing spaces. 
