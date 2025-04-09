@@ -15,10 +15,9 @@ ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '
 
 *** Test Cases ***
 
+# ALTERNAIVE: Use ${category} as embedded argument!
+
 Test Product Category Content
-    # Without this tag, the test exits with FAIL on category "books".
-    # Continue on failure instructs RF to execute all top-level keywords
-    # regardless of their result.
     [Tags]    robot:continue-on-failure
     FOR  ${category}  IN  @{CATEGORIES}
         Verify Amount Of "${category}" category

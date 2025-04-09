@@ -16,11 +16,17 @@ ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '
 *** Test Cases ***
 
 Test Product Category Content
+    [Tags]    robot:continue-on-failure
     FOR  ${category}  IN  @{CATEGORIES}
-        # -> Call the kwd to verify the amount in the category
-        No Operation
+        Verify Amount Of Category  ${category}
     END
-
+    
 *** Keywords ***
 
-# -> Create a User keyword to verify the amount of category
+Verify Amount Of Category
+    [Arguments]  ${category}  
+    # Navigate to the category
+    Click  "${category}"
+    Get Element Count  
+    ...    ${SEL_CATEGORY}  >=  3
+    ...    message=Expected at least {expected} articles in category ${category}, found {value}.

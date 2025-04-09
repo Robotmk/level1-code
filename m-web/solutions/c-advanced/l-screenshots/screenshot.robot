@@ -7,7 +7,7 @@ Test Setup  Session Init  ${URL}
 
 *** Variables ***
 ${URL}  https://shop.polymer-project.org
-
+${SEL_CART}  div.main-frame > div.subsection[visible]
 
 *** Test Cases ***
 Polymer Shop Orders
@@ -27,5 +27,5 @@ Add To Cart
     Select options by  id=quantitySelect  value  ${quantity}
     Click  text=ADD TO CART
     Click  text=view cart
-    Take screenshot  filename=EMBED  selector=div.main-frame > div.subsection[visible]
+    Take screenshot  filename=EMBED  selector=${SEL_CART}
     Go To  ${URL}
