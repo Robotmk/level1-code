@@ -13,11 +13,13 @@ XPath And CSS Selectors In Action
     Highlight Elements  input[placeholder*='What needs to be done']
     # explicit use of CSS with css=
     Highlight Elements  css=input[placeholder*='What needs to be done']
+
     #### Task 2
     # Using a XPath selector (starts with /)
     Highlight Elements  //h1
     # explicit use of XPath
     Highlight Elements  xpath=//h1
+    
     #### Task 3
     Highlight Elements  aside.learn   # CSS
     Highlight Elements  //aside[@class='learn']   # XPath
