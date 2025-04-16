@@ -12,3 +12,14 @@ Open RobotFramework Page
     # Open the RF page
     New Page    url=https://robotframework.org
 
+Open Two Pages with different Geolocations
+    New Browser  chromium  headless=False
+    # Merching
+    New Context  geolocation={"longitude": 10.986376, "latitude": 48.244901 }  permissions=["geolocation"]
+    New Page    url=https://browserleaks.com/geo
+    # Atlanta
+    New Context  geolocation={"longitude": -84.365348, "latitude": 33.772321 }  permissions=["geolocation"]
+    New Page    url=https://browserleaks.com/geo
+    No Operation
+
+    
