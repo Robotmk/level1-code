@@ -1,3 +1,3 @@
 *** Settings ***
 # Import the Browser Library
-Library  Browser  enable_playwright_debug=disabled
+Library  Browser  enable_playwright_debug=disabled  run_on_failure=Take Screenshot \ EMBED
