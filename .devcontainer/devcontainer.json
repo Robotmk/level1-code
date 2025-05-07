@@ -10,7 +10,8 @@
 				"d-biehl.robotcode",
 				"tamasfe.even-better-toml",
 				"ms-python.python",
-				"ms-python.debugpy"
+				"ms-python.debugpy",
+				"ms-vsliveshare.vsliveshare"
 			]
 		}
 	},
