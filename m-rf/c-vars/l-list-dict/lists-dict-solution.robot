@@ -1,31 +1,43 @@
 *** Variables ***
-@{LIBRARIES}    Selenium   Appium   Playwright
-@{MORE_LIBRARIES}  DataDriver  @{LIBRARIES}  Requests
-&{USER_DATA}         name=robotmk    password=secret
-&{MORE_USER_DATA}    role=admin  &{USER_DATA}  status=active
-@{KEYS}  name  password  role  status
+
+# Create two lists with
+# - 3 alcoholic drinks
+# - 3 non-alcoholic drinks
+@{ALC_DRINKS}           MaiTai    Caipirinha    GinTonic
+@{NONALC_DRINKS}        Banana    Strawberry    Kiwi
+
+# Create a dict with weekdays and a weather forecast for each day
+&{WEATHER_WEEKDAYS}
+...                     Monday=sunny
+...                     TuesdayDienstag=cloudy
+...                     Wednesday=rainy
+...                     Thursday=partly cloudy
+...                     Friday=windy
 
 *** Test Cases ***
-Logging The Lists
-    Log Many    @{LIBRARIES}
-    Log    All libs: @{LIBRARIES}
-    Log Many    @{MORE_LIBRARIES} 
+Logging The Drinks
+    # Create a list which contains all drinks (6)
+    VAR    @{all_drinks}    @{ALC_DRINKS}    @{NONALC_DRINKS}
+    # Add Cola at the end of the list
+    ${all_drinks}[-1]    Set Variable    Cola
+    Log    All Drinks:
+    # Log all drinks
+    Log Many    @{all_drinks}
+    # Log the first of all drinks
+    Log    ${all_drinks}[0]
+    # Log the last of all drinks
+    Log    ${all_drinks}[-1]
 
-Logging List Items
-    Log    The first library is: ${LIBRARIES}[0]
-    Log    The second library is: ${LIBRARIES}[1]
-    Log    The third library is: ${LIBRARIES}[2]
-    Log    Last library: ${LIBRARIES}[-1]
+Logging The Weather
+    # Create a dict with weekdays and a weather forecast for each day
+    VAR    &{weather_weekend}
+    ...    Saturday=sunny
+    ...    Sunday=stormy
+    # Change the weather on sunday to snow
+    ${weather_weekend}[Sunday]    Set Variable    snow
+    # Create a weather dict for the whole week
+    VAR    &{weather_week}    &{WEATHER_WEEKDAYS}    &{weather_weekend}
+    Log    &{weather_week}
+    # Log the weather on Tuesday
+    Log  ${weather_week}[Tuesday]
 
-Logging The Dicts
-    Log Many    &{USER_DATA}
-    Log  All User Data: &{USER_DATA}
-    Log Many    &{MORE_USER_DATA}
-
-Logging Dict Items
-    Log    The name is: ${USER_DATA}[${KEYS[0]}]
-    Log    The password is: ${USER_DATA}[${KEYS[1]}]
-    Log    The name is: ${MORE_USER_DATA}[${KEYS[0]}]
-    Log    The password is: ${MORE_USER_DATA}[${KEYS[1]}]
-    Log    The role is: ${MORE_USER_DATA}[${KEYS[2]}]
-    Log    The status is: ${MORE_USER_DATA}[${KEYS[3]}]
