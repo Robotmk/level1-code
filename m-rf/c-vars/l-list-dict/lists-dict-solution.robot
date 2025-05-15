@@ -9,7 +9,7 @@
 # Create a dict with weekdays and a weather forecast for each day
 &{WEATHER_WEEKDAYS}
 ...                     Monday=sunny
-...                     TuesdayDienstag=cloudy
+...                     Tuesday=cloudy
 ...                     Wednesday=rainy
 ...                     Thursday=partly cloudy
 ...                     Friday=windy
@@ -37,7 +37,6 @@ Logging The Weather
     ${weather_weekend}[Sunday]    Set Variable    snow
     # Create a weather dict for the whole week
     VAR    &{weather_week}    &{WEATHER_WEEKDAYS}    &{weather_weekend}
-    Log    &{weather_week}
     # Log the weather on Tuesday
     Log  ${weather_week}[Tuesday]
 
