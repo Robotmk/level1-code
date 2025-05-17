@@ -2,19 +2,11 @@
     "name": "Example",
     "files": [
         {
-            "fileName": "single.robot",
+            "fileName": "ask_ai.robot",
             "hidden": false
         },
         {
-            "fileName": "individual.robot",
-            "hidden": false
-        },
-        {
-            "fileName": "calc.resource",
-            "hidden": false
-        },
-        {
-            "fileName": "solution.robot",
+            "fileName": "ask_ai_solution.robot",
             "hidden": false
         }
     ],
