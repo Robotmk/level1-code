@@ -4,4 +4,4 @@ dependencies:
 - python=3.12.3
 - pip=23.2.1
 - pip:
-  - robotframework==7.1.1
+  - robotframework==7.2

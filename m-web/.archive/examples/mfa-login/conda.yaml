@@ -8,7 +8,7 @@ dependencies:
   - nodejs=22.11.0
   - pip:
     # packlages listed here are fetched from pypi.org and installed using pip.
-    - robotframework==7.1.1
+    - robotframework==7.2
     - robotframework-browser==19.1
     - robotframework-crypto==0.3.0
     - pyotp==2.9.0

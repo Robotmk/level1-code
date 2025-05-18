@@ -5,7 +5,7 @@ dependencies:
   - python=3.11
   - pip=23.2.1
   - pip:
-    - robotframework==7.1.1
+    - robotframework==7.2
     - PyScreeze==0.1.29
     - PyAutoGUI==0.9.54
     - robotframework-imagehorizonlibrary==1.0
