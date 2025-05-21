@@ -3,7 +3,7 @@ Documentation    This suite demonstrates the use of local variables.
 
 *** Test Cases ***
 Create and Log User
-    ${car}=    Get The Car
+    @{car}=    Get The Car
     Log The Car  ${car}
 
 *** Keywords ***
