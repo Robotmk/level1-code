@@ -5,7 +5,8 @@
 # - 3 non-alcoholic drinks
 # => 
 
-# Create a dict with weekdays and a weather forecast for each day
+# Create a dict with weekdays (Mon-Fri) as keys and a weather forecast 
+# for each day
 # => 
 
 *** Test Cases ***
@@ -23,7 +24,7 @@ Logging The Drinks
     # =>
 
 Logging The Weather
-    # Create a dict with weekdays and a weather forecast for each day
+    # Create a dict with weekend days (Sat-Sun) and a weather forecast for each day
     # =>
     # Change the weather on sunday to snow
     # =>

@@ -6,7 +6,8 @@
 @{ALC_DRINKS}           MaiTai    Caipirinha    GinTonic
 @{NONALC_DRINKS}        Banana    Strawberry    Kiwi
 
-# Create a dict with weekdays and a weather forecast for each day
+# Create a dict with weekdays (Mon-Fri) as keys and a weather forecast 
+# for each day
 &{WEATHER_WEEKDAYS}
 ...                     Monday=sunny
 ...                     Tuesday=cloudy
@@ -29,7 +30,7 @@ Logging The Drinks
     Log    ${all_drinks}[-1]
 
 Logging The Weather
-    # Create a dict with weekdays and a weather forecast for each day
+    # Create a dict with weekend days (Sat-Sun) and a weather forecast for each day
     VAR    &{weather_weekend}
     ...    Saturday=sunny
     ...    Sunday=stormy
