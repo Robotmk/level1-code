@@ -72,16 +72,34 @@ function VCDLLCheck {
 function DownloadRCC {
     if (Test-Path $RCC_PATH) {
         Write-Host "+ RCC already downloaded."
-        return
+    } else  {
+        Write-Host "+ Downloading RCC"
+        try {
+            Invoke-WebRequest -Uri $RCC_DOWNLOAD_URL -OutFile $RCC_PATH -ErrorAction Stop
+            Write-Host "OK: RCC downloaded."
+        } catch {
+            Write-Host "!! RCC download failed: $_"
+            exit 1
+        }
     }
-    Write-Host "+ Downloading RCC"
+    Write-Host "+ Verifying RCC executable and version..."
     try {
-        Invoke-WebRequest -Uri $RCC_DOWNLOAD_URL -OutFile $RCC_PATH -ErrorAction Stop
-        Write-Host "OK: RCC downloaded."
+        $versionOutput = & $RCC_PATH version 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "!! RCC execution failed."
+            exit 1
+        }
+
+        if ($versionOutput -match "v17\.29\.1") {
+            Write-Host "OK: RCC version verified as v17.29.1"
+        } else {
+            Write-Host "!! Unexpected RCC version: $versionOutput"
+            exit 1
+        }
     } catch {
-        Write-Host "!! RCC download failed: $_"
+        Write-Host "!! Error verifying RCC: $_"
         exit 1
-    }
+    }    
 }
 
 function RCCCleanup {
