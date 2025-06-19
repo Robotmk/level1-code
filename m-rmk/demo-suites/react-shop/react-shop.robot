@@ -17,19 +17,25 @@ Add Items to Cart and Verify
     [Documentation]    Adds an item to the cart and verifies it appears.
     Add Items To Cart  @{ARTICLES}
     Verify Cart   @{ARTICLES}
-    
 
 Check Amount Per Size
+    [Documentation]  Verifies that there is at least 1 product per size available.
     ${size_elements}=  Get Sizes
     FOR  ${size}  IN  @{size_elements}
-      Click  ${size}
-      Get Text  
-      ...    //p[contains(.,'Product(s) found')]  matches  ^[1-9] Product.*
-      ...    message=Size ${size} does not contain at least 1 product.
+        Verify Amount  ${size}
     END
 
 
 *** Keywords ***
+
+Verify Amount
+    [Documentation]  Click the size button and verify amount. In ANY case, deselect the size button. 
+    [Arguments]  ${size}
+    [Teardown]  Click  ${size}
+    Click  ${size}
+    Get Text  
+    ...    //p[contains(.,'Product(s) found')]  matches  ^[0-9]+ Product.*
+    ...    message=Size ${size} does not contain at least 1 product.
 
 Add Items To Cart
     [Arguments]  @{articles}
