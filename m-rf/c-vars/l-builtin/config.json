@@ -2,18 +2,14 @@
     "name": "Example",
     "files": [
         {
-            "fileName": "builtin.robot",
-            "hidden": false
-        },
-        {
-            "fileName": "res/My-Res.resource",
+            "fileName": "builtinvars.robot",
             "hidden": false
         }
     ],
     "robotArgs": {
         "loglevel": "TRACE:INFO"
     },
-    "robotVersion": "7.0",
+    "robotVersion": "7.2",
     "requirements": [
       
     ]
