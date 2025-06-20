@@ -1,0 +1,21 @@
+{
+    "name": "Example",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "syntax.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "solution.robot",
+            "hidden": false
+        }
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.2",
+    "requirements": [
+      
+    ]
+}
