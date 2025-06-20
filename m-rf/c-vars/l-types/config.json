@@ -10,7 +10,7 @@
     "robotArgs": {
         "loglevel": "TRACE:INFO"
     },
-    "robotVersion": "7.0",
+    "robotVersion": "7.2",
     "requirements": [
       
     ]
