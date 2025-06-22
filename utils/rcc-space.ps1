@@ -33,10 +33,20 @@ if ($env:RCC_ENVIRONMENT_HASH) {
 }
 
 # Determine spaceName based on robotPath or current directory
+$currentPath = Get-Location
 if (-not $robotPath) {
-    $robotPath = Get-Location
+    $robotPath = $currentPath
 }
-$spaceName = Split-Path -Leaf $robotPath  # Update to use robotPath if provided
+$spaceName = Split-Path -Leaf $currentPath
+
+if ($spaceName.startsWith("env")) {
+    Write-Host "The spacename starts with 'env'."
+    $confirmation = Read-Host "Do you want to continue? (y/n)"
+    if ($confirmation -ne "y") {        
+        Write-Host "Aborted by user."
+        exit
+    }
+}
 
 # Check for the existence of robot.yaml and conda.yaml in robotPath
 if (-not (Test-Path "$robotPath\robot.yaml") -or -not (Test-Path "$robotPath\conda.yaml")) {
@@ -63,7 +73,6 @@ Write-Host "Activating environment in space: $spaceName"
 
 # Store current directory
 $originalDir = Get-Location
-
 
 # Update rcc command
 if ($createOnly) {
