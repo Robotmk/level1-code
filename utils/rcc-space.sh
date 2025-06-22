@@ -36,14 +36,23 @@ while getopts ":cd:h" opt; do
 done
 
 if [ -z "$ROBOTPATH" ]; then
-    SPACENAME=$(basename "$PWD")  
-else
-    SPACENAME=$(basename "$ROBOTPATH")  
-fi
-
-
-if [ -z "$ROBOTPATH" ]; then
     ROBOTPATH="$PWD"
+else
+    if [ ! -d "$ROBOTPATH" ]; then
+        echo "❌ Error: ROBOTPATH '$ROBOTPATH' is not a directory."
+        exit 1
+    fi
+fi 
+
+SPACENAME=$(basename "$PWD")
+
+if [[ "$SPACENAME" == env* ]]; then
+    echo "The spacename starts with 'env'."
+    read -p "Do you want to continue? (y/n) " confirmation
+    if [[ "$confirmation" != "y" ]]; then
+        echo "Aborted by user."
+        exit 1
+    fi
 fi
 
 if [ -z "$SPACENAME" ]; then
