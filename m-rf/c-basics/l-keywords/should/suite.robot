@@ -1,5 +1,6 @@
 *** Settings ***
-Documentation      Here we have documentation for this suite. Documentation is often quite long. It can also contain multiple paragraphs.
+Documentation      Examples for assertion keywords. 
+...  For more, see https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Be%20Empty
 
 *** Variables ***
 ${NAME}  Robot
