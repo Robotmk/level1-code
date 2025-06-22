@@ -3,11 +3,7 @@
     "description": "readme.md",
     "files": [
         {
-            "fileName": "syntax.robot",
-            "hidden": false
-        },
-        {
-            "fileName": "solution.robot",
+            "fileName": "suite.robot",
             "hidden": false
         }
     ],
