@@ -1,3 +1,6 @@
+*** Settings ***
+Library  Collections
+
 *** Variables ***
 
 # Create two lists with
@@ -17,10 +20,10 @@
 
 *** Test Cases ***
 Logging The Drinks
-    # Create a list which contains all drinks (6)
+    # From both list variables, create a list which contains all drinks (6)
     VAR    @{all_drinks}    @{ALC_DRINKS}    @{NONALC_DRINKS}
-    # Add Cola at the end of the list
-    ${all_drinks}[-1]    Set Variable    Cola
+    # Add Cola at the end of all_drinks (use a keyword from the Collections library)
+    Append To List   ${all_drinks}    Cola
     Log    All Drinks:
     # Log all drinks
     Log Many    @{all_drinks}

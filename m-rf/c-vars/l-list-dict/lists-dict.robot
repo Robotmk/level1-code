@@ -1,3 +1,6 @@
+*** Settings ***
+Library  Collections
+
 *** Variables ***
 
 # Create two lists with
@@ -11,9 +14,9 @@
 
 *** Test Cases ***
 Logging The Drinks
-    # Create a list which contains all drinks (6)
+    # From both list variables, create a list which contains all drinks (6)
     # =>
-    # Add Cola at the end of the list
+    # Add Cola at the end of all_drinks (use a keyword from the Collections library)
     # =>
     # Log all drinks
     Log    All Drinks:
