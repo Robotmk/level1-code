@@ -10,10 +10,10 @@ ${URL}  https://playwright.dev
 *** Test Cases ***
 Quick Search On Playwright
     Click  button.DocSearch-Button
-    Fill Text  input.DocSearch-Input  download
+    Fill Text  input#docsearch-input  download
     Keyboard Key  press  Enter
 
 Delayed Search On Playwright
     Click  button.DocSearch-Button
-    Type Text  input.DocSearch-Input  download  delay=400 ms
-    Press Keys  input.DocSearch-Input  Enter
+    Type Text  input#docsearch-input  download  delay=400 ms
+    Press Keys  input#docsearch-input  Enter
