@@ -1,13 +1,20 @@
 *** Test Cases ***
-Test 1 - Should Pass
-    Log  I am ok!   
+Test 1
+    Log     lorem ipsum dolor sit amet
+    Fail    Platea ipsum dictumst dui
+    Skip    Nisl hac commodo natoque
 
-Test 2 - Should Fail
-    Fail  Something strange happened!
-    Log  I am fine. 
+Test 2
+    Skip    Bibendum velit pellentesque condimentum
+    Log     Integer potenti dis fermentum
+    Fail    Rutrum urna placerat tincidunt
 
-Test 3 - Gets skipped
-    Log  I am ok!
-    Skip  msg=Something weird happened. Better skip this test completely.
-    Log  I am not executed anymore...
-    Fail  
+Test 3
+    Fail    Eleifend ornare dictumst senectus
+    Log     Torquent imperdiet pulvinar commodo
+    Skip    Cubilia iaculis dictumst ex
+
+Test 4
+    Log     Natoque at sagittis placerat
+    Skip    Ridiculus bibendum orci ullamcorper
+    Fail    Felis enim massa eu

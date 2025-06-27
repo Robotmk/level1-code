@@ -9,7 +9,7 @@ ${URL}  https://coffee-cart.app
 
 Order Two Coffee
     No Operation
-    # Order 1 Cafe Latte
-    # Order 1 Espresso
-    # Go to Basket
-    # Remove both items
+    # Order a Cafe Latte
+    # Order a Espresso
+    # Go to Cart
+    # Use the "X" button right of boeth items to remove them all

@@ -2,7 +2,10 @@
 # Import the Browser Library
 Library  Browser
 # Create a new Chromium instance with visible UI
-Suite Setup  New Browser  chromium  headless=False
+Suite Setup  New Browser  ${BROWSER}  headless=False
+
+*** Variables ***
+${BROWSER}  chromium
 
 *** Test Cases ***
 

@@ -3,13 +3,14 @@ Library  Collections
 
 *** Variables ***
 
-# Create two lists with
+# Create two lists with 
 # - 3 alcoholic drinks
 # - 3 non-alcoholic drinks
+# (choose your favorites)
 # => 
 
-# Create a dict with weekdays (Mon-Fri) as keys and a weather forecast 
-# for each day
+# Create a dict with weekdays (Mon-Fri) as keys 
+# and a weather forecast for each day (choose your favorites)
 # => 
 
 *** Test Cases ***
@@ -18,7 +19,7 @@ Logging The Drinks
     # =>
     # Add Cola at the end of all_drinks (use a keyword from the Collections library)
     # =>
-    # Log all drinks
+    # Log all drinks: use the "Log Many" keyword which accespt a list variable / multiple arguments
     Log    All Drinks:
     # =>
     # Log the first of all drinks

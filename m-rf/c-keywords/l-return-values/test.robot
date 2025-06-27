@@ -1,6 +1,9 @@
 *** Settings ***
 Documentation  Demonstrate the usage of the RETURN statement.
 
+# The aim of this test is to calculate the sum of three numbers 
+# and compare them with an expected result.
+
 *** Variables ***
 ${EXPECTED_RESULT}  14
 

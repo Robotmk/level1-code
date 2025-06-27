@@ -10,6 +10,6 @@ ${URL}  https://coffee-cart.app
 Order Two Coffee
     Click  data-test=Espresso
     Click  data-test=Cafe_Latte
-    Click  text=cart (2)
-    Click  button[aria-label='Remove all Cafe Latte']
-    Click  button[aria-label='Remove all Espresso']
+    Click  [aria-label='Cart page']
+    Click  [aria-label='Remove all Cafe Latte']
+    Click  [aria-label='Remove all Espresso']

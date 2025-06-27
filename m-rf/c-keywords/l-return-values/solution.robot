@@ -5,15 +5,10 @@ Documentation  Demonstrate the usage of the RETURN statement.
 ${EXPECTED_RESULT}  ${14}
 
 *** Test Cases ***
-My Test 1 Using A List Variable
+My Test
     @{numbers}=  Return Three Values
     ${result} =  Sum Of  @{numbers}
     Should Be Equal  ${result}  ${EXPECTED_RESULT}
-
-My Test 2 Using Single Variables
-    ${num1}  ${num2}  ${num3}=  Return Three Values
-    ${result} =  Sum Of  ${num1}  ${num2}  ${num3}
-    Should Be Equal As Integers  ${result}  ${EXPECTED_RESULT}
 
 *** Keywords ***
 

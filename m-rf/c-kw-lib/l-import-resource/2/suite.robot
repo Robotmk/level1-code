@@ -12,12 +12,14 @@ Test 2 - Greeting Validation
     Validate Greeting Message    ${message}
 
 *** Keywords ***
+# Application keyword
 Login To Application
     [Arguments]    ${username}    ${password}
     Log    Attempting to log in with username: ${username} and password: ${password}
     Should Not Be Empty    ${username}
     Should Not Be Empty    ${password}
 
+# Validation keyword
 Validate Greeting Message
     [Arguments]    ${message}
     Log    Validating message: ${message}
