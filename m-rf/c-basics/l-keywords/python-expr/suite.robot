@@ -4,9 +4,10 @@ ${B}  4
 
 *** Test Cases ***
 Evaluating Simple Python Expressions
-    ${sum}=  Evaluate  ${A} + ${B}  # Evaluating a simple arithmetic expression
-    ${equal}=  Evaluate  ${A} != ${B}  # Comparing numbers
-    ${greater}=    Evaluate    ${B} > ${A}
+    ${finger_count}=  Evaluate  5 + 5  # Addition with variables
+    ${week}=  Evaluate  ${A} + ${B}  # Addition with variables
+    ${equal}=  Evaluate  ${A} != ${B}  # Comparison
+    ${greater}=    Evaluate    ${B} < ${A}
     Run Keyword If    ${greater}    Fail   msg=B is greater than A!
 
 Advanced Python Expressions
