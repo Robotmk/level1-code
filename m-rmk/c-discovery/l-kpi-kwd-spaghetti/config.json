@@ -1,0 +1,21 @@
+{
+    "name": "Example",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "spaghetticode.robot",
+            "hidden": false
+        },
+        {
+            "fileName": "dummy-keywords.resource",
+            "hidden": false
+        }        
+    ],
+    "robotArgs": {
+        "loglevel": "TRACE:INFO"
+    },
+    "robotVersion": "7.2",
+    "requirements": [
+      
+    ]
+}
