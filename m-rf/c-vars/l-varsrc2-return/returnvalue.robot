@@ -16,6 +16,7 @@ Returning A Scalar
 Returning A List
     # There should be a file called returnvalue.robot 
     # Use: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#List%20Directory
+    # Use: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Contain
     # =>
     No Operation
 
@@ -28,6 +29,7 @@ Returning a Dict Example
 Multiple Return Example
     # Split the path server/logs/server.log into folder and file
     # Use: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#Split%20Path
+    # Use: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Be%20Equal
     # Path must be server/logs and file server.log
     # =>
     No Operation
