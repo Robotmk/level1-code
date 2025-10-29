@@ -5,7 +5,7 @@ Resource   lib-Browser.resource
 
 Browser Initialization
     [Arguments]  ${url}
-    New Browser  headless=False
+    New Browser  headless=False  slowMo=1s
     New Context    locale=en-US
     New Page    ${url}
 
