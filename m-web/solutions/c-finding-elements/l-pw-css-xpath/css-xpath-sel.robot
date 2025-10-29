@@ -10,9 +10,9 @@ ${URL}  https://todomvc.com/examples/vue/dist/#/
 XPath And CSS Selectors In Action 
     #### Task 1 
     # Using a CSS selector (implicit)
-    Highlight Elements  input[placeholder*='What needs to be done']
+    Highlight Elements  input[placeholder='What needs to be done?']
     # explicit use of CSS with css=
-    Highlight Elements  css=input[placeholder*='What needs to be done']
+    Highlight Elements  css=input[placeholder='What needs to be done?']
 
     #### Task 2
     # Using a XPath selector (starts with /)
