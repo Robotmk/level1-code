@@ -7,29 +7,26 @@ ${SENTENCE}    Sapien risus aliquet torquent, vivamus feugiat curae est.
 ${EXPECTED_LENGTH}    57
 
 *** Test Cases ***
-Returning A Scalar
-    # length of ${SENTENCE} should be 57 (line 7)
-    # Use: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Be%20Equal%20As%20Numbers
-    # =>
+Scalar From Keyword
+    # Goal: Check that length of ${SENTENCE} is ${EXPECTED_LENGTH}
+    # Get Length: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Get%20Length
+    # Should be Equal As Numbers: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Be%20Equal%20As%20Numbers
     No Operation
     
-Returning A List
-    # There should be a file called returnvalue.robot 
-    # Use: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#List%20Directory
-    # Use: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Contain
-    # =>
+List From Keyword
+    # Goal: Check that there is a file called returnvalue.robot in the current directory
+    # List Directory: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#List%20Directory
+    # Should Contain: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Contain
     No Operation
 
-Returning a Dict Example
-    # Log the PATH environment variable
-    # Use: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#Get%20Environment%20Variables
-    # =>
-    No Operation
-
-Multiple Return Example
-    # Split the path server/logs/server.log into folder and file
+List From Keyword 2
+    # Goal: Split the path server/logs/server.log into folder and file and check that Path is 
+    # server/logs and file server.log
     # Use: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#Split%20Path
     # Use: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Be%20Equal
-    # Path must be server/logs and file server.log
-    # =>
+    No Operation
+
+Dict From Keyword
+    # Goal: Get env vars, Log the PATH environment variable
+    # Get Environment Variables: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#Get%20Environment%20Variables
     No Operation

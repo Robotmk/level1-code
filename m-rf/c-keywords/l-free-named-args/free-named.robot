@@ -11,5 +11,4 @@ Run Custom Command
     [Arguments]    ${command}   @{cmdargs}    ${host}=localhost    
     ...    ${timeout}=60s   &{kwargs}
     ${argstr}=  Catenate   @{cmdargs}
-    Log To Console  Running command: ${kwargs}[shell] -c ${command} 
-    ...    ${argstr} --timeout ${timeout} --user ${kwargs}[asuser] ${host}
+    Log To Console  Running command: ${kwargs}[shell] -c ${command} ${argstr} --timeout ${timeout} --user ${kwargs}[asuser] ${host}

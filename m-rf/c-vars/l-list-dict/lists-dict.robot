@@ -6,11 +6,10 @@ Library  Collections
 # Create two lists with 
 # - 3 alcoholic drinks
 # - 3 non-alcoholic drinks
-# (choose your favorites)
 # => 
 
 # Create a dict with weekdays (Mon-Fri) as keys 
-# and a weather forecast for each day (choose your favorites)
+# and a weather forecast for each day
 # => 
 
 *** Test Cases ***
