@@ -4,23 +4,19 @@ Suite Setup  Browser Initialization  ${URL}
 
 *** Variables ***
 ${URL}  https://ginandjuice.shop/catalog
-# Storing the selector for the articles
 ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '/catalog/product')]
-@{CATEGORIES}  
-...    Accessories  
-...    Accompaniments
-...    Books
-...    Gin
-...    Juice
+# -> Create a list variable for all categories
+# (Accessories,Accompaniments,Books,Gin,Juice)
+
 
 *** Test Cases ***
 
-Test Product Category Content
-    FOR  ${category}  IN  @{CATEGORIES}
-        # -> Call the kwd to verify the amount in the category
-        No Operation
-    END
-
+Every Category Should Contain Min 3 Articles
+    # -> Iterate over all categories and call the kwd "Verify Amount Of Category".
+    # -> Ensure that even if one category fails, the others are still checked.
+    No Operation
+      
 *** Keywords ***
 
-# -> Create a User keyword to verify the amount of category
+# -> Create a User keyword "Verify Amount Of Category"
+# to verify the amount in the category (=parameter) 

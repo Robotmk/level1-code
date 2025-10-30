@@ -4,7 +4,6 @@ Suite Setup  Browser Initialization  ${URL}
 
 *** Variables ***
 ${URL}  https://ginandjuice.shop/catalog
-# Storing the selector for the articles
 ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '/catalog/product')]
 @{CATEGORIES}  
 ...    Accessories  
@@ -15,7 +14,7 @@ ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '
 
 *** Test Cases ***
 
-Test Product Category Content
+Every Category Should Contain Min 3 Articles
     [Tags]    robot:continue-on-failure
     FOR  ${category}  IN  @{CATEGORIES}
         Verify Amount Of Category  ${category}
@@ -24,8 +23,7 @@ Test Product Category Content
 *** Keywords ***
 
 Verify Amount Of Category
-    [Arguments]  ${category}  
-    # Navigate to the category
+    [Arguments]  ${category}
     Click  "${category}"
     Get Element Count  
     ...    ${SEL_CATEGORY}  >=  3

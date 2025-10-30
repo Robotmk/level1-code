@@ -4,14 +4,13 @@ Suite Setup  Browser Initialization  ${URL}
 
 *** Variables ***
 ${URL}  https://ginandjuice.shop/catalog
-# Storing the selector for the articles
+# Article links inside the category listing
 ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '/catalog/product')]
 
 *** Test Cases ***
 
-Test Product Category Content
+Book Category Should Contain Min 3 Articles
     VAR  ${category}  Books
-    # Navigate to the "books" category
     Click  "${category}"
     Get Element Count  
     ...    ${SEL_CATEGORY}  >=  3
