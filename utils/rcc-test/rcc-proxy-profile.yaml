@@ -1,12 +1,12 @@
-﻿name: RCCTestProfile
+name: RCCTestProfile
 description: RCC proxy profile
 settings:
   certificates:
     verify-ssl: true
   network:
     no-proxy: 'localhost,127.0.0.1'
-    https-proxy: 'http://localhost:8118'
-    http-proxy: 'http://localhost:8118'
+    https-proxy: 'http://myproxy.local:3128'
+    http-proxy: 'http://myproxy.local:3128'
   meta:
     name: RCCTestProfile
     description: RCC proxy profile
