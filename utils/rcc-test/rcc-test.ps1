@@ -11,6 +11,23 @@ $RCC_PATH = Join-Path $PSScriptRoot "rcc.exe"
 # Set ROBOCORP_HOME for this session
 $env:ROBOCORP_HOME = Join-Path $env:TEMP "rcc-test"
 
+# Error handling - display support message on script failure
+$ErrorActionPreference = "Stop"
+trap {
+    Write-Host ""
+    Write-Host "========================================="
+    Write-Host "⚠️  ERROR OCCURRED - SUPPORT INFORMATION"
+    Write-Host "========================================="
+    Write-Host "If you need assistance, please:"
+    Write-Host "  1. Copy the complete console output above"
+    Write-Host "  2. Send it via email to: mail@robotmk.org"
+    Write-Host "  3. Include a brief description of what you were trying to do"
+    Write-Host ""
+    Write-Host "We'll help you resolve this issue!"
+    Write-Host "========================================="
+    exit 1
+}
+
 # --- Helper Functions ---
 function Print-Header {
     param ([string]$Message)

@@ -12,6 +12,32 @@ RCC_BINARY="$SCRIPT_DIR/rcc"
 
 export ROBOCORP_HOME="${TMPDIR:-/tmp}/rcc-test"
 
+# Error handling - display support message on script failure
+trap 'on_error' ERR
+trap 'on_exit' EXIT
+
+SCRIPT_ERROR=0
+
+function on_error() {
+    SCRIPT_ERROR=1
+}
+
+function on_exit() {
+    if [ $SCRIPT_ERROR -eq 1 ]; then
+        echo ""
+        echo "========================================="
+        echo "⚠️  ERROR OCCURRED - SUPPORT INFORMATION"
+        echo "========================================="
+        echo "If you need assistance, please:"
+        echo "  1. Copy the complete console output above"
+        echo "  2. Send it via email to: mail@robotmk.org"
+        echo "  3. Include a brief description of what you were trying to do"
+        echo ""
+        echo "We'll help you resolve this issue!"
+        echo "========================================="
+    fi
+}
+
 function print_header() {
     echo ""
     echo "========================================="
