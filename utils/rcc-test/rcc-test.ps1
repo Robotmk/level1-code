@@ -9,7 +9,8 @@ $USE_PROXY = $false
 $RCC_PATH = Join-Path $PSScriptRoot "rcc.exe"
 
 # Set ROBOCORP_HOME for this session
-$env:ROBOCORP_HOME = Join-Path $env:TEMP "rcc-test"
+# Use LOCALAPPDATA to ensure it stays local and never on a server/roaming profile
+$env:ROBOCORP_HOME = Join-Path $env:LOCALAPPDATA ".robotmk\rcc-test"
 
 # Error handling - display support message on script failure
 $ErrorActionPreference = "Stop"

@@ -10,7 +10,7 @@ USE_PROXY="false"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RCC_BINARY="$SCRIPT_DIR/rcc"
 
-export ROBOCORP_HOME="${TMPDIR:-/tmp}/rcc-test"
+export ROBOCORP_HOME="$HOME/.robotmk/rcc-test"
 
 # Error handling - display support message on script failure
 trap 'on_error' ERR
