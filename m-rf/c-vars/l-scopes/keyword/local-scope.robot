@@ -15,4 +15,3 @@ Get The Car
 Log The Car
     [Arguments]    ${car} 
     Log          The car is a ${car}[1] ${car}[0].
-    Log Many     List contains:  @{car}
