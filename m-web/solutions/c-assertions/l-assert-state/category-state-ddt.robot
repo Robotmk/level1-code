@@ -23,5 +23,5 @@ Test Product Category Content
 
 Verify Category "${category}" Is Visible
     Click  "${category}"
-    Get Element States  text="${category}"  contains  visible  enabled
+    Get Element States  "${category}"  contains  visible  enabled
     ...  message=The category ${category} is not visible/enabled!

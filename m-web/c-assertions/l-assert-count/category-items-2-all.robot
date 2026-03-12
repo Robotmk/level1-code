@@ -12,8 +12,11 @@ ${SEL_CATEGORY}  //section[@class='container-list-tiles']/a[starts-with(@href, '
 *** Test Cases ***
 
 Every Category Should Contain Min 3 Articles
-    # -> Iterate over all categories and call the kwd "Verify Amount Of Category".
-    # -> Ensure that even if one category fails, the others are still checked.
+    # Extend the test from the previous task (category-items-1-books.robot) so that it checks **all categories**."
+    # -> Create a list variable in the variables section
+    # -> Iterate over the categories and call the kwd "Verify Amount Of Category".
+    # -> Use the special tag "robot:continue-on-failure" to ensure that 
+    # even if one category fails, the others are still checked.
     No Operation
       
 *** Keywords ***

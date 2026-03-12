@@ -11,10 +11,6 @@ Checkout
 Fill Billing Address
     No Operation
     # =>
-     
-Checkout Page Should Be Visible
-    No Operation
-    # =>
 
 Execute Payment 
     [Arguments]  
