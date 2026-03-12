@@ -9,12 +9,12 @@ ${URL}  https://playwright.dev
 *** Test Cases ***
 Quick Search On Playwright
     No Operation
-    # Click the Search Button
-    # Enter "download" into the search field as WORD word
+    # Click the Search Button 
+    # Fill the text field with "download" at once
     # Use "Keyboard key" to press Enter
     
 Delayed Search On Playwright
     No Operation
-    # Click the Search Button
-    # Enter "download" into the search field, key by key, 400ms delay
-    # Send the Enter key event to the input field
+    # Press Ctrl+K to open the search field
+    # Enter "download" into the search field (key by key, with 400ms delay)
+    # Use "Press Keys" to send the "Enter" key to the input field

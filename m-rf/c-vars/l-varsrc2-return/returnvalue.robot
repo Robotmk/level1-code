@@ -16,6 +16,7 @@ Scalar From Keyword
 List From Keyword
     # Goal: Check that there is a file called returnvalue.robot in the current directory
     # List Directory: https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html#List%20Directory
+    # (use the dot "." or ${CURDIR} for the current directory)
     # Should Contain: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Should%20Contain
     No Operation
 

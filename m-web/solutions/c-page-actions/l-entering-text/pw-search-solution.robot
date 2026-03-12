@@ -14,6 +14,7 @@ Quick Search On Playwright
     Keyboard Key  press  Enter
 
 Delayed Search On Playwright
-    Click  button.DocSearch-Button
+    # (sends the shortcut to the nav bar)
+    Press Keys  nav  CTRL+K
     Type Text  input#docsearch-input  download  delay=400 ms
     Press Keys  input#docsearch-input  Enter
