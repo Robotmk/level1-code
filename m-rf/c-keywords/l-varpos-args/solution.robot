@@ -1,14 +1,16 @@
 *** Test Cases ***
-Combined Example
-    [Documentation]  command type, "n" commands, user, timeout
-    Run Custom Command    maintenance  cmd1
-    Run Custom Command    custom    cmd1    user=bob    timeout=3s
-    Run Custom Command    custom    cmd1    cmd2    cmd3    user=alice    timeout=60s
+Test One
+    Pack the Luggage    bag    sunglasses  size=xs
+    Pack the Luggage    bag   
+    ...    iphone  keys  lipstick
+    ...    pen  earphones  hand cream  
+    Pack the Luggage    suitcase    
+    ...    shirts  socks  shoes  underwear  ebook  dress
+    ...    pants  shoes swimwear  coat  laundry bag  towel
+    ...    size=xl
 
 *** Keywords ***
-Run Custom Command
-    [Arguments]    ${type}    @{commands}    ${user}=admin    ${timeout}=30s
-    # @{commands} and ${commands} are both possible; using an expanded list (@) in a 
-    # string context is not possible
-    Log    Running ${type} commands: @{commands} with user ${user} and timeout ${timeout}!
-    Log    Running ${type} commands: ${commands} with user ${user} and timeout ${timeout}!
+Pack the Luggage
+    [Arguments]    ${type}    @{items}    ${size}=medium
+    Log    Packing a ${size} ${type} with these items: 
+    Log Many  @{items}

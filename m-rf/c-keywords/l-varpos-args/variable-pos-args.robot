@@ -1,14 +1,19 @@
 *** Test Cases ***
-Combined Example
-    [Documentation]  command type, "n" commands, user, timeout
-    Run Custom Command    maintenance  cmd1
-    Run Custom Command    custom    cmd1    user=bob    timeout=3s
-    #3
-    Run Custom Command    custom    cmd1    cmd2    cmd3    user=alice    timeout=60s
+Test One
+    Pack the Luggage    bag    sunglasses  size=xs
+    Pack the Luggage    bag   
+    ...    iphone  keys  lipstick
+    ...    pen  earphones  hand cream  
+    Pack the Luggage    suitcase    
+    ...    shirts  socks  shoes  underwear  ebook  dress
+    ...    pants  shoes swimwear  coat  laundry bag  towel
+    ...    size=xl
 
 *** Keywords ***
-Run Custom Command
-    #[Arguments]    ???
-    # Expected Log message (example: keyword call #3)
-    # Running custom commands: ['cmd1', 'cmd2', 'cmd3'] with user alice and timeout 60s!
-    Log    Running commands: ... 
+Pack the Luggage
+    # => complete the arguments
+    [Arguments]   
+    # => Use "Log" to log the kind and size of the bag.
+    
+    # => Use "Log Many" to log the items 
+    
