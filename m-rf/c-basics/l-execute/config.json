@@ -1,0 +1,14 @@
+{
+    "name": "Example",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "hello_world.robot",
+            "hidden": false
+        }
+    ],
+    "robotVersion": "7.2",
+    "requirements": [
+      
+    ]
+}
