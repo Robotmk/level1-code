@@ -17,7 +17,7 @@ $ErrorActionPreference = "Stop"
 trap {
     Write-Host ""
     Write-Host "========================================="
-    Write-Host "⚠️  ERROR OCCURRED - SUPPORT INFORMATION"
+    Write-Host "ERROR OCCURRED - SUPPORT INFORMATION"
     Write-Host "========================================="
     Write-Host "If you need assistance, please:"
     Write-Host "  1. Copy the complete console output above"
@@ -77,7 +77,7 @@ function Main {
     CreateEnv -EnvName "pw" -EnvDesc "Environment 2/2"
     UnsetProxy
     
-    Print-Header "✅ Test environments created successfully"
+    Print-Header "OK: Test environments created successfully"
 }
 
 # --- Functions ---
@@ -89,9 +89,9 @@ function CheckOS {
     $minSupportedVersion = [version]"10.0.17763"
 
     if ($version -ge $minSupportedVersion) {
-        Write-Host "✅ Supported OS detected: $caption ($version)"
+        Write-Host "OK: Supported OS detected: $caption ($version)"
     } else {
-        Write-Host "❌ Unsupported OS: $caption ($version) - Windows 10 / Server 2019 or higher required!"
+        Write-Host "NOK: Unsupported OS: $caption ($version) - Windows 10 / Server 2019 or higher required!"
         exit 1
     }
 }
@@ -112,9 +112,9 @@ function VCDLLCheck {
     }
 
     if ($found.Count -gt 0) {
-        Write-Host "✅ Visual C++ runtime DLLs found"
+        Write-Host "OK: Visual C++ runtime DLLs found"
     } else {
-        Write-Host "❌ Required Visual C++ DLLs not found."
+        Write-Host "NOK: Required Visual C++ DLLs not found."
         Write-Host "Please install: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist"
         exit 1
     }
@@ -124,7 +124,7 @@ function Verify-RCC {
     Print-Section "RCC Verification"
     
     if (-Not (Test-Path $RCC_PATH)) {
-        Write-Host "❌ RCC binary not found at: $RCC_PATH"
+        Write-Host "NOK: RCC binary not found at: $RCC_PATH"
         exit 1
     }
     
@@ -132,18 +132,18 @@ function Verify-RCC {
     try {
         $versionOutput = & $RCC_PATH version 2>&1
         if ($LASTEXITCODE -ne 0) {
-            Write-Host "❌ RCC execution failed"
+            Write-Host "NOK: RCC execution failed"
             exit 1
         }
 
         if ($versionOutput -match "v17\.29\.1") {
-            Write-Host "✅ RCC binary found and functional (version v17.29.1)"
+            Write-Host "OK: RCC binary found and functional (version v17.29.1)"
         } else {
-            Write-Host "⚠️  Unexpected RCC version: $versionOutput"
-            Write-Host "✅ RCC binary found and functional"
+            Write-Host "ERR: Unexpected RCC version: $versionOutput"
+            Write-Host "OK: RCC binary found and functional"
         }
     } catch {
-        Write-Host "❌ Error verifying RCC: $_"
+        Write-Host "NOK: Error verifying RCC: $_"
         exit 1
     }
 }
@@ -153,12 +153,12 @@ function DownloadRCC {
     
     # Skip download if proxy is used (RCC must already exist)
     if ($Global:USE_PROXY -eq $true) {
-        Write-Host "⏭️  Skipping download (proxy is configured, RCC already present)"
+        Write-Host "Skipping download (proxy is configured, RCC already present)"
         return
     }
     
     if (Test-Path $RCC_PATH) {
-        Write-Host "✅ RCC already present: $RCC_PATH"
+        Write-Host "OK: RCC already present: $RCC_PATH"
         return
     }
     
@@ -166,9 +166,9 @@ function DownloadRCC {
     Write-Host "Detected system: Windows"
     try {
         Invoke-WebRequest -Uri $RCC_DOWNLOAD_URL -OutFile $RCC_PATH -ErrorAction Stop
-        Write-Host "✅ RCC successfully downloaded"
+        Write-Host "OK: RCC successfully downloaded"
     } catch {
-        Write-Host "❌ Error downloading RCC: $_"
+        Write-Host "NOK: Error downloading RCC: $_"
         exit 1
     }
 }
@@ -178,11 +178,11 @@ function RCCCleanup {
     Write-Host "Running RCC cleanup..."
     & $RCC_PATH config cleanup --all
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "❌ RCC cleanup failed"
+        Write-Host "NOK: RCC cleanup failed"
         exit 1
     }
     & $RCC_PATH ht ls
-    Write-Host "✅ RCC cleanup successful"
+    Write-Host "OK: RCC cleanup successful"
 }
 
 function DisableTelemetry {
@@ -190,10 +190,10 @@ function DisableTelemetry {
     Write-Host "Disabling telemetry..."
     & $RCC_PATH configure identity -t
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "❌ Error disabling telemetry"
+        Write-Host "NOK: Error disabling telemetry"
         exit 1
     }
-    Write-Host "✅ Telemetry disabled"
+    Write-Host "OK: Telemetry disabled"
 }
 
 function CheckLongPaths {
@@ -201,11 +201,11 @@ function CheckLongPaths {
     Write-Host "Checking long paths support..."
     & $RCC_PATH configure longpaths
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "❌ Failed to enable long path support"
+        Write-Host "NOK: Failed to enable long path support"
         Write-Host "See: https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry"
         exit 1
     } else {
-        Write-Host "✅ Long Path Support enabled"
+        Write-Host "OK: Long Path Support enabled"
     }
 }
 
@@ -214,12 +214,12 @@ function SetProxy {
     $useProxy = Read-Host "Are you behind a proxy? (y/n)"
     if ($useProxy -match "^[YyJj]") {
         Write-Host ""
-        Write-Host "⚠️  Proxy usage detected!"
+        Write-Host "ERR: Proxy usage detected!"
         
         # Check if RCC binary exists
         if (-Not (Test-Path $RCC_PATH)) {
             Write-Host ""
-            Write-Host "❌ RCC binary not found!"
+            Write-Host "NOK: RCC binary not found!"
             Write-Host ""
             Write-Host "When using a proxy, you must download RCC manually first."
             Write-Host ""
@@ -235,13 +235,13 @@ function SetProxy {
             exit 1
         }
         
-        Write-Host "✅ RCC binary found, proceeding with proxy configuration..."
+        Write-Host "OK: RCC binary found, proceeding with proxy configuration..."
         CreateProxyProfile
         Import-ProxyProfile
         Switch-ProxyProfile -ProfileName $RCC_PROFILE_NAME
         $Global:USE_PROXY = $true
     } else {
-        Write-Host "✅ No proxy will be used"
+        Write-Host "OK: No proxy will be used"
     }
 }
 
@@ -269,21 +269,21 @@ settings:
     $config | Out-File -FilePath "rcc-proxy-profile.yaml" -Encoding utf8
     $env:HTTP_PROXY = $httpProxyAddress
     $env:HTTPS_PROXY = $httpsProxyAddress
-    Write-Host "✅ Proxy profile created"
+    Write-Host "OK: Proxy profile created"
 }
 
 function Import-ProxyProfile {
     Write-Host "Importing proxy profile..."
     if (-Not (Test-Path "rcc-proxy-profile.yaml")) {
-        Write-Host "❌ rcc-proxy-profile.yaml does not exist"
+        Write-Host "NOK: rcc-proxy-profile.yaml does not exist"
         exit 1
     }
     & $RCC_PATH config import -f rcc-proxy-profile.yaml
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "❌ Failed to import proxy profile"
+        Write-Host "NOK: Failed to import proxy profile"
         exit 1
     }
-    Write-Host "✅ Proxy profile imported"
+    Write-Host "OK: Proxy profile imported"
 }
 
 function Switch-ProxyProfile {
@@ -294,12 +294,12 @@ function Switch-ProxyProfile {
     & $RCC_PATH config switch --profile $ProfileName
     $output = & $RCC_PATH config switch
     if (-Not ($output -match "Currently active profile is: $ProfileName")) {
-        Write-Host "❌ Failed to switch proxy profile"
+        Write-Host "NOK: Failed to switch proxy profile"
         Write-Host "Current profiles:"
         Write-Host $output
         exit 1
     } else {
-        Write-Host "✅ Switched to proxy profile: $ProfileName"
+        Write-Host "OK: Switched to proxy profile: $ProfileName"
     }
 }
 
@@ -311,10 +311,10 @@ function RunRCCDiag {
     $exitCode = $LASTEXITCODE
     Write-Host "--- RCC NETDIAG OUTPUT END ---"
     if ($exitCode -ne 0) {
-        Write-Host "❌ Network diagnostics failed"
+        Write-Host "NOK: Network diagnostics failed"
         exit 1
     }
-    Write-Host "✅ Network diagnostics successful"
+    Write-Host "OK: Network diagnostics successful"
 }
 
 function CreateEnv {
@@ -329,11 +329,11 @@ function CreateEnv {
     $exitCode = $LASTEXITCODE
     Write-Host "--- RCC HOLOTREE OUTPUT END ---"
     if ($exitCode -ne 0) {
-        Write-Host "❌ Error creating environment: $EnvName"
+        Write-Host "NOK: Error creating environment: $EnvName"
         UnsetProxy
         exit 1
     } else {
-        Write-Host "✅ Environment $EnvName created successfully"
+        Write-Host "OK: Environment $EnvName created successfully"
     }
 }
 
@@ -344,11 +344,11 @@ function UnsetProxy {
         & $RCC_PATH config switch --noprofile
         $output = & $RCC_PATH config switch
         if (-Not ($output -match "Currently active profile is: default")) {
-            Write-Host "⚠️  Warning: Failed to switch back to default profile"
+            Write-Host "ERR: Warning: Failed to switch back to default profile"
             Write-Host "Current profiles:"
             Write-Host $output
         } else {
-            Write-Host "✅ Restored default profile"
+            Write-Host "OK: Restored default profile"
         }        
     }
 }
