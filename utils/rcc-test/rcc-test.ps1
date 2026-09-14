@@ -201,11 +201,14 @@ function CheckLongPaths {
     Write-Host "Checking long paths support..."
     & $RCC_PATH configure longpaths
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "NOK: Failed to enable long path support"
-        Write-Host "See: https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry"
+        Write-Host "NOK: Failed to enable Windows 'long path support'."
+        Write-Host "-> Open a new administrative CMD or PowerShell in this folder (level1-code\utils\rcc-test) and run:"
+        Write-Host "   rcc config longpaths --enable"
+        Write-Host "-> Then run this script again."
+        Write-Host "For more information, see: https://www.robotmk.org/en/blog/rcctrouble/#longpath-support-windows"
         exit 1
     } else {
-        Write-Host "OK: Long Path Support enabled"
+        Write-Host "OK: Long Path Support is already enabled."
     }
 }
 
